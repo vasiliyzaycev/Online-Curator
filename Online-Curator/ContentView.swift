@@ -31,7 +31,7 @@ private extension ContentView {
     struct CurrentState {
         var login: String = ""
         var password: String = ""
-        var isCredentialsValid: Bool {
+        var isLoginAllowed: Bool {
             isValidEmail(login) && !password.isEmpty
         }
     }
@@ -73,8 +73,8 @@ private extension ContentView {
         .background(Color(red: 35/255, green: 86/255, blue: 71/255))
         .foregroundColor(Color.white)
         .cornerRadius(Constants.radius)
-        .disabled(!state.isCredentialsValid)
-        .opacity(state.isCredentialsValid ? 1.0 : 0.4)
+        .disabled(!state.isLoginAllowed)
+        .opacity(state.isLoginAllowed ? 1.0 : 0.4)
     }
     
     func bottomButtons() -> some View {
