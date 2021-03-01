@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var login: String = ""
-    @State private var password: String = ""
-    private let padding: CGFloat = 35
-    private let radius: CGFloat = 10
+    @State private var state = CurrentState()
     
     var body: some View {
-        VStack(spacing: padding) {
+        VStack(spacing: Constants.padding) {
             Spacer()
             Image("specialist_icon")
             loginView()
@@ -24,29 +21,45 @@ struct ContentView: View {
             bottomButtons()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.horizontal, padding)
+        .padding(.horizontal, Constants.padding)
         .background(Image("background_main").resizable())
         .edgesIgnoringSafeArea([.top, .bottom])
     }
 }
 
 private extension ContentView {
+    struct CurrentState {
+        var login: String = ""
+        var password: String = ""
+        var isCredentialsValid: Bool {
+            isValidEmail(login) && !password.isEmpty
+        }
+    }
+    
     func loginView() -> some View {
-        inputView(icon: "person", field: TextField("Почта", text: $login))
+        let binding = Binding<String>(
+            get: { self.state.login },
+            set: { self.state.login = $0 })
+        return inputView(
+            iconName: "person",
+            field: TextField("Почта", text: binding)
+                .autocapitalization(.none))
     }
     
     func passwordView() -> some View {
-        inputView(icon: "lock", field: SecureField("Пароль", text: $password))
+        inputView(
+            iconName: "lock",
+            field: SecureField("Пароль", text: $state.password))
     }
     
-    func inputView<T: View>(icon: String, field: T) -> some View {
+    func inputView<T: View>(iconName: String, field: T) -> some View {
         HStack {
-            Image(systemName: icon).foregroundColor(.secondary)
+            Image(systemName: iconName).foregroundColor(.secondary)
             field.foregroundColor(Color.black)
         }
         .padding()
         .background(Color.white)
-        .cornerRadius(radius)
+        .cornerRadius(Constants.radius)
     }
     
     func signInButton() -> some View {
@@ -57,9 +70,11 @@ private extension ContentView {
 
         }
         .frame(width: 150)
-        .background(Color.black)
+        .background(Color(red: 35/255, green: 86/255, blue: 71/255))
         .foregroundColor(Color.white)
-        .cornerRadius(radius)
+        .cornerRadius(Constants.radius)
+        .disabled(!state.isCredentialsValid)
+        .opacity(state.isCredentialsValid ? 1.0 : 0.4)
     }
     
     func bottomButtons() -> some View {
@@ -68,7 +83,7 @@ private extension ContentView {
             Spacer()
             bottomButton(action: {}, label: "Забыли пароль?")
         }
-        .padding(.bottom, padding)
+        .padding(.bottom, Constants.padding)
     }
     
     func bottomButton(
@@ -81,6 +96,25 @@ private extension ContentView {
                 .foregroundColor(Color.white)
         }
     }
+}
+
+fileprivate func isValidEmail(_ email: String) -> Bool {
+    let emailRegEx = "(?:[a-zA-Z0-9!#$%\\&‘*+/=?\\^_`{|}~-]+(?:\\" +
+        ".[a-zA-Z0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08" +
+        "\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\" +
+        "x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-" +
+        "z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[" +
+        "(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0" +
+        "-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[" +
+        "\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|" +
+        "\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+    let emailTest = NSPredicate(format:"SELF MATCHES[c] %@", emailRegEx)
+    return emailTest.evaluate(with: email)
+}
+
+private enum Constants {
+    static let padding: CGFloat = 35
+    static let radius: CGFloat = 10
 }
 
 struct ContentView_Previews: PreviewProvider {
