@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */; };
+		FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */; };
 		FFBB06AA25EB9B60005EA5A2 /* Online_CuratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */; };
-		FFBB06AC25EB9B60005EA5A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06AB25EB9B60005EA5A2 /* ContentView.swift */; };
+		FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */; };
 		FFBB06AE25EB9B61005EA5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */; };
 		FFBB06B125EB9B61005EA5A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB06B025EB9B61005EA5A2 /* Preview Assets.xcassets */; };
+		FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8E6D425F25FFA002CFD86 /* Assembly.swift */; };
+		FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8E6D725F26035002CFD86 /* UserProvider.swift */; };
+		FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8E6DC25F260A6002CFD86 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMComponents.swift; sourceTree = "<group>"; };
 		FFBB06A625EB9B60005EA5A2 /* Online-Curator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online-Curator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_CuratorApp.swift; sourceTree = "<group>"; };
-		FFBB06AB25EB9B60005EA5A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFBB06B025EB9B61005EA5A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFBB06B225EB9B61005EA5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFD8E6D425F25FFA002CFD86 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		FFD8E6D725F26035002CFD86 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		FFD8E6DC25F260A6002CFD86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF9E2C5125F3A0CB000C1846 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */,
+				FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FFACD5B825F25186005D5BA1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		FFBB069D25EB9B60005EA5A2 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +79,10 @@
 		FFBB06A825EB9B60005EA5A2 /* Online-Curator */ = {
 			isa = PBXGroup;
 			children = (
+				FFACD5B825F25186005D5BA1 /* Common */,
+				FFD8E6E125F285B4002CFD86 /* Modules */,
+				FFD8E6D325F25D7F002CFD86 /* Services */,
 				FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */,
-				FFBB06AB25EB9B60005EA5A2 /* ContentView.swift */,
 				FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */,
 				FFBB06B225EB9B61005EA5A2 /* Info.plist */,
 				FFBB06AF25EB9B61005EA5A2 /* Preview Content */,
@@ -67,6 +96,32 @@
 				FFBB06B025EB9B61005EA5A2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FFD8E6D325F25D7F002CFD86 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFD8E6DB25F2605F002CFD86 /* UserProvider */,
+				FFD8E6D425F25FFA002CFD86 /* Assembly.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FFD8E6DB25F2605F002CFD86 /* UserProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FFD8E6D725F26035002CFD86 /* UserProvider.swift */,
+				FFD8E6DC25F260A6002CFD86 /* User.swift */,
+			);
+			path = UserProvider;
+			sourceTree = "<group>";
+		};
+		FFD8E6E125F285B4002CFD86 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FF9E2C5125F3A0CB000C1846 /* Login */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +193,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBB06AC25EB9B60005EA5A2 /* ContentView.swift in Sources */,
+				FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */,
+				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
+				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
+				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
+				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
 				FFBB06AA25EB9B60005EA5A2 /* Online_CuratorApp.swift in Sources */,
+				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

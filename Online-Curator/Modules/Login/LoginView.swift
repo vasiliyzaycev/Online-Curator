@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginView.swift
 //  Shared
 //
 //  Created by Vasiliy Zaytsev on 27.01.2021.
@@ -7,27 +7,36 @@
 
 import SwiftUI
 
-struct ContentView: View {
+
+struct LoginView: View {
     @State private var state = CurrentState()
+    private let router: Router<LoginRoute>
+    
+    init(router: Router<LoginRoute>) {
+        self.router = router
+    }
     
     var body: some View {
-        VStack(spacing: Constants.padding) {
-            Spacer()
-            Image("specialist_icon")
-            loginView()
-            passwordView()
-            signInButton()
-            Spacer()
-            bottomButtons()
+        router.navigationWrapper() {
+            VStack(spacing: Constants.padding) {
+                Spacer()
+                Image("specialist_icon")
+                loginView()
+                passwordView()
+                signInButton()
+                Spacer()
+                bottomButtons()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, Constants.padding)
+            .background(Image("background_main").resizable())
+            .edgesIgnoringSafeArea([.top, .bottom])
+            .navigationBarHidden(true)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.horizontal, Constants.padding)
-        .background(Image("background_main").resizable())
-        .edgesIgnoringSafeArea([.top, .bottom])
     }
 }
 
-private extension ContentView {
+private extension LoginView {
     struct CurrentState {
         var login: String = ""
         var password: String = ""
@@ -79,16 +88,20 @@ private extension ContentView {
     
     func bottomButtons() -> some View {
         HStack {
-            bottomButton(action: {}, label: "Регистрация")
+            bottomButton(label: "Регистрация") {
+                router.open(.registration)
+            }
             Spacer()
-            bottomButton(action: {}, label: "Забыли пароль?")
+            bottomButton(label: "Забыли пароль?") {
+                router.open(.forgotPassword)
+            }
         }
         .padding(.bottom, Constants.padding)
     }
     
     func bottomButton(
-        action: @escaping () -> Void,
-        label: String
+        label: String,
+        action: @escaping () -> Void
     ) -> some View {
         Button(action: action) {
             Text(label)
@@ -117,13 +130,22 @@ private enum Constants {
     static let radius: CGFloat = 10
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
+    static let testRouter = Router { (route: LoginRoute) -> AnyView in
+        switch route {
+        case .registration:
+            return AnyView(Text("Экран регистрации"))
+        case .forgotPassword:
+            return AnyView(Text("Экран восстановления пароля"))
+        }
+    }
+    
     static var previews: some View {
         Group {
-            ContentView()
-                .previewDevice("iPhone 12 mini")
-            ContentView()
+            LoginView(router: testRouter)
                 .previewDevice("iPhone SE (1st generation)")
+            LoginView(router: testRouter)
+                .previewDevice("iPhone 12 mini")
         }
     }
 }
