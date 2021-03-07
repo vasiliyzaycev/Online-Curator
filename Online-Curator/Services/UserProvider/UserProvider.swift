@@ -7,10 +7,15 @@
 
 import Combine
 
-class UserProvider: ObservableObject {
+protocol UserProviderProtocol {
+    func start(login: String, with password: String)
+    func logout()
+}
+
+class UserProvider: UserProviderProtocol, ObservableObject {
     @Published private(set) var user: User? = nil
     
-    func login(_ login: String, password: String) {
+    func start(login: String, with password: String) {
         user = User(login: login)
     }
     

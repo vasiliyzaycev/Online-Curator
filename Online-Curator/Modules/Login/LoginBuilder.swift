@@ -7,20 +7,26 @@
 
 import SwiftUI
 
-enum LoginRoute: Hashable, CaseIterable {
-    case registration
-    case forgotPassword
-}
+class LoginRouter: Router<LoginRoute>, LoginRouterProtocol {}
 
 final class LoginBuilder: ModuleBuilder {
-    func build(_ assembly: Assembly) -> LoginView {
-        LoginView(router: Router { (route: LoginRoute) -> AnyView in
+    lazy var router: LoginRouter = {
+        LoginRouter { route in
             switch route {
             case .registration:
                 return AnyView(Text("Экран регистрации"))
             case .forgotPassword:
                 return AnyView(Text("Экран восстановления пароля"))
             }
-        })
+        }
+    }()
+    
+    func build(_ assembly: Assembly) -> some View {
+        router.navigationView {
+            LoginView(
+                viewModel: LoginViewModel(
+                    userProvider: assembly.userProvider,
+                    router: router))
+        }
     }
 }

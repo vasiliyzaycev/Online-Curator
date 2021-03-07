@@ -13,7 +13,7 @@ protocol ModuleBuilder {
     func build(_ : Assembly) -> V
 }
 
-final class Router<R>: ObservableObject {
+class Router<R: Hashable & CaseIterable>: ObservableObject {
     private let destinationForRoute: (R) -> AnyView
     @Published private var currentState: R? = nil
     
@@ -21,24 +21,6 @@ final class Router<R>: ObservableObject {
         self.destinationForRoute = destinationForRoute
     }
     
-    func navigationLink<Label: View>(
-        to route: R,
-        isActive: Binding<Bool>? = nil,
-        label: () -> Label
-    ) -> NavigationLink<Label, AnyView> {
-        guard let isActive = isActive else {
-            return NavigationLink(
-                destination: destinationForRoute(route),
-                label: label)
-        }
-        return NavigationLink(
-            destination: destinationForRoute(route),
-            isActive: isActive,
-            label: label)
-    }
-}
-
-extension Router where R: Hashable, R: CaseIterable {
     func open(_ route: R) {
         currentState = route
     }
@@ -47,14 +29,14 @@ extension Router where R: Hashable, R: CaseIterable {
         currentState = nil
     }
     
-    func navigationWrapper<Content: View>(content: () -> Content) -> some View {
+    func navigationView<Content: View>(content: () -> Content) -> some View {
         NavigationView {
             content().background(navigationLinks())
         }
     }
 }
 
-private extension Router where R: Hashable, R: CaseIterable {
+private extension Router {
     func navigationLinks() -> some View {
         NavigationLinksView(router: self)
     }

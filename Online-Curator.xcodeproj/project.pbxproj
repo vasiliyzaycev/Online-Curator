@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */; };
+		FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */; };
 		FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */; };
 		FFBB06AA25EB9B60005EA5A2 /* Online_CuratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */; };
 		FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMComponents.swift; sourceTree = "<group>"; };
 		FFBB06A625EB9B60005EA5A2 /* Online-Curator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online-Curator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_CuratorApp.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */,
 				FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */,
+				FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
+				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
 				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
 				FFBB06AA25EB9B60005EA5A2 /* Online_CuratorApp.swift in Sources */,
 				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,

@@ -7,58 +7,43 @@
 
 import SwiftUI
 
-
-struct LoginView: View {
-    @State private var state = CurrentState()
-    private let router: Router<LoginRoute>
+struct LoginView<ViewModel: LoginViewModelProtocol>: View {
+    @ObservedObject private var viewModel: ViewModel
     
-    init(router: Router<LoginRoute>) {
-        self.router = router
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
-        router.navigationWrapper() {
-            VStack(spacing: Constants.padding) {
-                Spacer()
-                Image("specialist_icon")
-                loginView()
-                passwordView()
-                signInButton()
-                Spacer()
-                bottomButtons()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, Constants.padding)
-            .background(Image("background_main").resizable())
-            .edgesIgnoringSafeArea([.top, .bottom])
-            .navigationBarHidden(true)
+        VStack(spacing: Constants.padding) {
+            Spacer()
+            Image("specialist_icon")
+            loginView()
+            passwordView()
+            signInButton()
+            Spacer()
+            bottomButtons()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal, Constants.padding)
+        .background(Image("background_main").resizable())
+        .edgesIgnoringSafeArea([.top, .bottom])
+        .navigationBarHidden(true)
     }
 }
 
 private extension LoginView {
-    struct CurrentState {
-        var login: String = ""
-        var password: String = ""
-        var isLoginAllowed: Bool {
-            isValidEmail(login) && !password.isEmpty
-        }
-    }
-    
     func loginView() -> some View {
-        let binding = Binding<String>(
-            get: { self.state.login },
-            set: { self.state.login = $0 })
-        return inputView(
+        inputView(
             iconName: "person",
-            field: TextField("Почта", text: binding)
+            field: TextField("Почта", text: $viewModel.login)
                 .autocapitalization(.none))
     }
     
     func passwordView() -> some View {
         inputView(
             iconName: "lock",
-            field: SecureField("Пароль", text: $state.password))
+            field: SecureField("Пароль", text: $viewModel.password))
     }
     
     func inputView<T: View>(iconName: String, field: T) -> some View {
@@ -72,28 +57,29 @@ private extension LoginView {
     }
     
     func signInButton() -> some View {
-        Button(action: {}) {
+        Button {
+            viewModel.startLogin()
+        } label: {
             Text("Войти")
                 .fontWeight(.heavy)
                 .padding()
-
         }
         .frame(width: 150)
         .background(Color(red: 35/255, green: 86/255, blue: 71/255))
         .foregroundColor(Color.white)
         .cornerRadius(Constants.radius)
-        .disabled(!state.isLoginAllowed)
-        .opacity(state.isLoginAllowed ? 1.0 : 0.4)
+        .disabled(!viewModel.isLoginButtonActive)
+        .opacity(viewModel.isLoginButtonActive ? 1.0 : 0.4)
     }
     
     func bottomButtons() -> some View {
         HStack {
             bottomButton(label: "Регистрация") {
-                router.open(.registration)
+                viewModel.open(.registration)
             }
             Spacer()
             bottomButton(label: "Забыли пароль?") {
-                router.open(.forgotPassword)
+                viewModel.open(.forgotPassword)
             }
         }
         .padding(.bottom, Constants.padding)
@@ -111,40 +97,27 @@ private extension LoginView {
     }
 }
 
-fileprivate func isValidEmail(_ email: String) -> Bool {
-    let emailRegEx = "(?:[a-zA-Z0-9!#$%\\&‘*+/=?\\^_`{|}~-]+(?:\\" +
-        ".[a-zA-Z0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08" +
-        "\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\" +
-        "x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-" +
-        "z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[" +
-        "(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0" +
-        "-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[" +
-        "\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|" +
-        "\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-    let emailTest = NSPredicate(format:"SELF MATCHES[c] %@", emailRegEx)
-    return emailTest.evaluate(with: email)
-}
-
 private enum Constants {
     static let padding: CGFloat = 35
     static let radius: CGFloat = 10
 }
 
 struct LoginView_Previews: PreviewProvider {
-    static let testRouter = Router { (route: LoginRoute) -> AnyView in
-        switch route {
-        case .registration:
-            return AnyView(Text("Экран регистрации"))
-        case .forgotPassword:
-            return AnyView(Text("Экран восстановления пароля"))
-        }
+    class ViewModelStub: LoginViewModelProtocol {
+        var login: String = ""
+        var password: String = ""
+        var isLoginButtonActive = false
+        
+        func startLogin() {}
+        func open(_ route: LoginRoute) {}
+        func close() {}
     }
     
     static var previews: some View {
         Group {
-            LoginView(router: testRouter)
+            LoginView(viewModel: ViewModelStub())
                 .previewDevice("iPhone SE (1st generation)")
-            LoginView(router: testRouter)
+            LoginView(viewModel: ViewModelStub())
                 .previewDevice("iPhone 12 mini")
         }
     }
