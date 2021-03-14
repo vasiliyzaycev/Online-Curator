@@ -10,6 +10,12 @@
 #########################
 
 ####
+# App private
+
+GitIgnore/
+
+
+####
 # AppCode settings
 
 .idea/

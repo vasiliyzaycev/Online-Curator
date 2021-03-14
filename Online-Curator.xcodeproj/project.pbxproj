@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF87935925FE386100B3D140 /* URLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF87935825FE386100B3D140 /* URLs.plist */; };
 		FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */; };
 		FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */; };
 		FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF87935825FE386100B3D140 /* URLs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLs.plist; sourceTree = "<group>"; };
 		FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMComponents.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		FF87934D25FE2A5D00B3D140 /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
+				FF87935B25FE387D00B3D140 /* GitIgnore */,
 				FFBB06B225EB9B61005EA5A2 /* Info.plist */,
 			);
 			path = InfoPlists;
@@ -71,6 +74,14 @@
 				FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FF87935B25FE387D00B3D140 /* GitIgnore */ = {
+			isa = PBXGroup;
+			children = (
+				FF87935825FE386100B3D140 /* URLs.plist */,
+			);
+			path = GitIgnore;
 			sourceTree = "<group>";
 		};
 		FF9E2C5125F3A0CB000C1846 /* Login */ = {
@@ -208,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF87935925FE386100B3D140 /* URLs.plist in Resources */,
 				FFBB06B125EB9B61005EA5A2 /* Preview Assets.xcassets in Resources */,
 				FFBB06AE25EB9B61005EA5A2 /* Assets.xcassets in Resources */,
 			);
