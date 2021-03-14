@@ -1,5 +1,5 @@
 //
-//  Online_CuratorApp.swift
+//  StartApp.swift
 //  Online-Curator
 //
 //  Created by Vasiliy Zaytsev on 28.02.2021.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Online_CuratorApp: App {
+struct OnlineCuratorApp: App {
     private let assembly = Assembly()
     @ObservedObject var userProvider: UserProvider
     

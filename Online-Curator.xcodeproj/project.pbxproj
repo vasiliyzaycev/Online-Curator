@@ -10,7 +10,7 @@
 		FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */; };
 		FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */; };
 		FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */; };
-		FFBB06AA25EB9B60005EA5A2 /* Online_CuratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */; };
+		FFBB06AA25EB9B60005EA5A2 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06A925EB9B60005EA5A2 /* StartApp.swift */; };
 		FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */; };
 		FFBB06AE25EB9B61005EA5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */; };
 		FFBB06B125EB9B61005EA5A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB06B025EB9B61005EA5A2 /* Preview Assets.xcassets */; };
@@ -24,7 +24,7 @@
 		FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMComponents.swift; sourceTree = "<group>"; };
 		FFBB06A625EB9B60005EA5A2 /* Online-Curator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online-Curator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Online_CuratorApp.swift; sourceTree = "<group>"; };
+		FFBB06A925EB9B60005EA5A2 /* StartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
 		FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFBB06B025EB9B61005EA5A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +45,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF87934925FE26D900B3D140 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FFACD5B825F25186005D5BA1 /* Common */,
+				FFD8E6E125F285B4002CFD86 /* Modules */,
+				FFD8E6D325F25D7F002CFD86 /* Services */,
+				FFBB06A925EB9B60005EA5A2 /* StartApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FF87934D25FE2A5D00B3D140 /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB06B225EB9B61005EA5A2 /* Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		FF87935025FE2AE600B3D140 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB06AF25EB9B61005EA5A2 /* Preview Content */,
+				FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FF9E2C5125F3A0CB000C1846 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,13 +110,9 @@
 		FFBB06A825EB9B60005EA5A2 /* Online-Curator */ = {
 			isa = PBXGroup;
 			children = (
-				FFACD5B825F25186005D5BA1 /* Common */,
-				FFD8E6E125F285B4002CFD86 /* Modules */,
-				FFD8E6D325F25D7F002CFD86 /* Services */,
-				FFBB06A925EB9B60005EA5A2 /* Online_CuratorApp.swift */,
-				FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */,
-				FFBB06B225EB9B61005EA5A2 /* Info.plist */,
-				FFBB06AF25EB9B61005EA5A2 /* Preview Content */,
+				FF87934925FE26D900B3D140 /* Sources */,
+				FF87935025FE2AE600B3D140 /* Resources */,
+				FF87934D25FE2A5D00B3D140 /* InfoPlists */,
 			);
 			path = "Online-Curator";
 			sourceTree = "<group>";
@@ -202,7 +226,7 @@
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
 				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
 				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
-				FFBB06AA25EB9B60005EA5A2 /* Online_CuratorApp.swift in Sources */,
+				FFBB06AA25EB9B60005EA5A2 /* StartApp.swift in Sources */,
 				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,10 +356,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Online-Curator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Online-Curator/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 22G9XCBT9G;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Online-Curator/Info.plist";
+				INFOPLIST_FILE = "Online-Curator/InfoPlists/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,10 +378,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Online-Curator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Online-Curator/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 22G9XCBT9G;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Online-Curator/Info.plist";
+				INFOPLIST_FILE = "Online-Curator/InfoPlists/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
