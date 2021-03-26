@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF86F6A22609254B00217F78 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6A12609254B00217F78 /* Host.swift */; };
+		FF86F6AB260928B800217F78 /* HostProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6AA260928B800217F78 /* HostProtocol.swift */; };
+		FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6B0260E66A400217F78 /* Dictionary+URLQueryConvertible.swift */; };
+		FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6B5260E6BE700217F78 /* UserProviderProtocol.swift */; };
 		FF87935925FE386100B3D140 /* URLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF87935825FE386100B3D140 /* URLs.plist */; };
 		FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */; };
 		FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */; };
 		FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */; };
-		FFBB06AA25EB9B60005EA5A2 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06A925EB9B60005EA5A2 /* StartApp.swift */; };
+		FFBB06AA25EB9B60005EA5A2 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06A925EB9B60005EA5A2 /* MainApp.swift */; };
 		FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */; };
 		FFBB06AE25EB9B61005EA5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */; };
 		FFBB06B125EB9B61005EA5A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB06B025EB9B61005EA5A2 /* Preview Assets.xcassets */; };
@@ -21,12 +25,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF86F6A12609254B00217F78 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		FF86F6AA260928B800217F78 /* HostProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProtocol.swift; sourceTree = "<group>"; };
+		FF86F6B0260E66A400217F78 /* Dictionary+URLQueryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+URLQueryConvertible.swift"; sourceTree = "<group>"; };
+		FF86F6B5260E6BE700217F78 /* UserProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderProtocol.swift; sourceTree = "<group>"; };
 		FF87935825FE386100B3D140 /* URLs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLs.plist; sourceTree = "<group>"; };
 		FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMComponents.swift; sourceTree = "<group>"; };
 		FFBB06A625EB9B60005EA5A2 /* Online-Curator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online-Curator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFBB06A925EB9B60005EA5A2 /* StartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
+		FFBB06A925EB9B60005EA5A2 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFBB06B025EB9B61005EA5A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -47,13 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF86F6A02609250B00217F78 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FF86F6AA260928B800217F78 /* HostProtocol.swift */,
+				FF86F6A12609254B00217F78 /* Host.swift */,
+				FF86F6B0260E66A400217F78 /* Dictionary+URLQueryConvertible.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		FF87934925FE26D900B3D140 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				FFACD5B825F25186005D5BA1 /* Common */,
 				FFD8E6E125F285B4002CFD86 /* Modules */,
 				FFD8E6D325F25D7F002CFD86 /* Services */,
-				FFBB06A925EB9B60005EA5A2 /* StartApp.swift */,
+				FFBB06A925EB9B60005EA5A2 /* MainApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -139,6 +157,7 @@
 		FFD8E6D325F25D7F002CFD86 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FF86F6A02609250B00217F78 /* Networking */,
 				FFD8E6DB25F2605F002CFD86 /* UserProvider */,
 				FFD8E6D425F25FFA002CFD86 /* Assembly.swift */,
 			);
@@ -148,6 +167,7 @@
 		FFD8E6DB25F2605F002CFD86 /* UserProvider */ = {
 			isa = PBXGroup;
 			children = (
+				FF86F6B5260E6BE700217F78 /* UserProviderProtocol.swift */,
 				FFD8E6D725F26035002CFD86 /* UserProvider.swift */,
 				FFD8E6DC25F260A6002CFD86 /* User.swift */,
 			);
@@ -233,12 +253,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */,
+				FF86F6A22609254B00217F78 /* Host.swift in Sources */,
+				FF86F6AB260928B800217F78 /* HostProtocol.swift in Sources */,
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
+				FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
+				FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */,
 				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
 				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
-				FFBB06AA25EB9B60005EA5A2 /* StartApp.swift in Sources */,
+				FFBB06AA25EB9B60005EA5A2 /* MainApp.swift in Sources */,
 				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
