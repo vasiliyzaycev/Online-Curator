@@ -19,7 +19,7 @@ struct OnlineCuratorApp: App {
     var body: some Scene {
         WindowGroup {
             if let _ = userProvider.user {
-                Text("Privet))")
+                RootBuilder().build(assembly)
             } else {
                 LoginBuilder().build(assembly)
             }

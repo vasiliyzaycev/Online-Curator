@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB24261073840075F4BE /* RootBuilder.swift */; };
+		FF66BB29261074D80075F4BE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB28261074D80075F4BE /* RootView.swift */; };
+		FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */; };
 		FF86F6A22609254B00217F78 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6A12609254B00217F78 /* Host.swift */; };
 		FF86F6AB260928B800217F78 /* HostProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6AA260928B800217F78 /* HostProtocol.swift */; };
 		FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6B0260E66A400217F78 /* Dictionary+URLQueryConvertible.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF66BB24261073840075F4BE /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		FF66BB28261074D80075F4BE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		FF86F6A12609254B00217F78 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
 		FF86F6AA260928B800217F78 /* HostProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProtocol.swift; sourceTree = "<group>"; };
 		FF86F6B0260E66A400217F78 /* Dictionary+URLQueryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+URLQueryConvertible.swift"; sourceTree = "<group>"; };
@@ -55,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF66BB23261073510075F4BE /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				FF66BB24261073840075F4BE /* RootBuilder.swift */,
+				FF66BB28261074D80075F4BE /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		FF86F6A02609250B00217F78 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */,
+				FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -177,6 +193,7 @@
 		FFD8E6E125F285B4002CFD86 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FF66BB23261073510075F4BE /* Root */,
 				FF9E2C5125F3A0CB000C1846 /* Login */,
 			);
 			path = Modules;
@@ -256,11 +273,14 @@
 				FF86F6A22609254B00217F78 /* Host.swift in Sources */,
 				FF86F6AB260928B800217F78 /* HostProtocol.swift in Sources */,
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
+				FF66BB29261074D80075F4BE /* RootView.swift in Sources */,
+				FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */,
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
 				FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
 				FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */,
 				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
+				FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */,
 				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
 				FFBB06AA25EB9B60005EA5A2 /* MainApp.swift in Sources */,
 				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,
