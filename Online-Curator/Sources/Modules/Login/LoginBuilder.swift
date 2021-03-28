@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class LoginRouter: Router<LoginRoute>, LoginRouterProtocol {}
+final class LoginRouter: Router<LoginRoute>, LoginRouterProtocol {}
 
 final class LoginBuilder: ModuleBuilder {
     lazy var router: LoginRouter = {
