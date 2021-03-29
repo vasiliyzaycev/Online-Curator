@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct RootView: View {
-    @State var isSideBarVisible = false
+    @State private var isSideBarVisible = false
     
     var body: some View {
-        NavigationView {
+        let drag = DragGesture()
+            .onEnded {
+                if $0.translation.width < -100 {
+                    withAnimation {
+                        self.isSideBarVisible = false
+                    }
+                }
+            }
+        return NavigationView {
             ZStack {
                 Text("Privet))")
                 GeometryReader { geometry in
@@ -21,17 +29,19 @@ struct RootView: View {
                 }
                 .background(Color.black.opacity(isSideBarVisible ? 0.5 : 0))
                 .edgesIgnoringSafeArea(.bottom)
-                .animation(.default)
             }
             .navigationBarTitle("Онлайн-куратор", displayMode: .inline)
             .navigationBarItems(leading:
-                Button(action: { isSideBarVisible.toggle() }) {
-                    Image(systemName: isSideBarVisible
-                        ? "arrow.left"
-                        : "sidebar.leading")
+                Button {
+                    withAnimation {
+                        isSideBarVisible.toggle()
+                    }
+                } label: {
+                    Image(systemName: "line.horizontal.3")
                 }
             )
             .navigationBarColor(UIColor(named: "NavBarBackgroundColor"))
+            .gesture(drag)
         }
     }
 }
