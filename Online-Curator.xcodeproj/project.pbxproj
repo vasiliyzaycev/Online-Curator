@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF37FC152615084C0041E7CF /* StoredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC142615084C0041E7CF /* StoredValue.swift */; };
+		FF37FC1926150AC80041E7CF /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC1826150AC80041E7CF /* ValueStore.swift */; };
+		FF37FC1D26150B230041E7CF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC1C26150B230041E7CF /* ErrorHandling.swift */; };
 		FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB24261073840075F4BE /* RootBuilder.swift */; };
 		FF66BB29261074D80075F4BE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB28261074D80075F4BE /* RootView.swift */; };
 		FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF37FC142615084C0041E7CF /* StoredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredValue.swift; sourceTree = "<group>"; };
+		FF37FC1826150AC80041E7CF /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
+		FF37FC1C26150B230041E7CF /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		FF66BB24261073840075F4BE /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		FF66BB28261074D80075F4BE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -61,6 +67,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF37FC1726150A740041E7CF /* StoredValue */ = {
+			isa = PBXGroup;
+			children = (
+				FF37FC142615084C0041E7CF /* StoredValue.swift */,
+				FF37FC1826150AC80041E7CF /* ValueStore.swift */,
+				FF37FC1C26150B230041E7CF /* ErrorHandling.swift */,
+			);
+			path = StoredValue;
+			sourceTree = "<group>";
+		};
 		FF66BB23261073510075F4BE /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +146,7 @@
 		FFACD5B825F25186005D5BA1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FF37FC1726150A740041E7CF /* StoredValue */,
 				FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */,
 				FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */,
 			);
@@ -278,10 +295,13 @@
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
 				FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
+				FF37FC1D26150B230041E7CF /* ErrorHandling.swift in Sources */,
 				FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */,
+				FF37FC152615084C0041E7CF /* StoredValue.swift in Sources */,
 				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
 				FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */,
 				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
+				FF37FC1926150AC80041E7CF /* ValueStore.swift in Sources */,
 				FFBB06AA25EB9B60005EA5A2 /* MainApp.swift in Sources */,
 				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,
 			);
