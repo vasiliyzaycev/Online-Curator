@@ -10,6 +10,8 @@
 		FF37FC152615084C0041E7CF /* StoredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC142615084C0041E7CF /* StoredValue.swift */; };
 		FF37FC1926150AC80041E7CF /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC1826150AC80041E7CF /* ValueStore.swift */; };
 		FF37FC1D26150B230041E7CF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC1C26150B230041E7CF /* ErrorHandling.swift */; };
+		FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC2026187DFD0041E7CF /* LoginProtocols.swift */; };
+		FF37FC2A261887110041E7CF /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC29261887110041E7CF /* RootProtocols.swift */; };
 		FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB24261073840075F4BE /* RootBuilder.swift */; };
 		FF66BB29261074D80075F4BE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB28261074D80075F4BE /* RootView.swift */; };
 		FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */; };
@@ -34,6 +36,8 @@
 		FF37FC142615084C0041E7CF /* StoredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredValue.swift; sourceTree = "<group>"; };
 		FF37FC1826150AC80041E7CF /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		FF37FC1C26150B230041E7CF /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		FF37FC2026187DFD0041E7CF /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		FF37FC29261887110041E7CF /* RootProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
 		FF66BB24261073840075F4BE /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		FF66BB28261074D80075F4BE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				FF66BB24261073840075F4BE /* RootBuilder.swift */,
+				FF37FC29261887110041E7CF /* RootProtocols.swift */,
 				FF66BB28261074D80075F4BE /* RootView.swift */,
 			);
 			path = Root;
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */,
+				FF37FC2026187DFD0041E7CF /* LoginProtocols.swift */,
 				FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */,
 				FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */,
 			);
@@ -289,8 +295,10 @@
 				FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */,
 				FF86F6A22609254B00217F78 /* Host.swift in Sources */,
 				FF86F6AB260928B800217F78 /* HostProtocol.swift in Sources */,
+				FF37FC2A261887110041E7CF /* RootProtocols.swift in Sources */,
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
 				FF66BB29261074D80075F4BE /* RootView.swift in Sources */,
+				FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */,
 				FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */,
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
 				FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */,

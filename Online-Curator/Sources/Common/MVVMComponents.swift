@@ -13,6 +13,13 @@ protocol ModuleBuilder {
     func build(_ : Assembly) -> V
 }
 
+protocol RouterProtocol {
+    associatedtype R
+
+    func open(_ route: R)
+    func close()
+}
+
 class Router<R: Hashable & CaseIterable>: ObservableObject {
     private let destinationForRoute: (R) -> AnyView
     @Published private var currentState: R? = nil
@@ -20,15 +27,19 @@ class Router<R: Hashable & CaseIterable>: ObservableObject {
     init(_ destinationForRoute: @escaping (R) -> AnyView) {
         self.destinationForRoute = destinationForRoute
     }
-    
+}
+
+extension Router: RouterProtocol {
     func open(_ route: R) {
         currentState = route
     }
-    
+
     func close() {
         currentState = nil
     }
-    
+}
+
+extension Router {
     func navigationView<Content: View>(content: () -> Content) -> some View {
         NavigationView {
             content().background(navigationLinks())
