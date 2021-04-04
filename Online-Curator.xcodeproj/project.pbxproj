@@ -12,6 +12,14 @@
 		FF37FC1D26150B230041E7CF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC1C26150B230041E7CF /* ErrorHandling.swift */; };
 		FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC2026187DFD0041E7CF /* LoginProtocols.swift */; };
 		FF37FC2A261887110041E7CF /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC29261887110041E7CF /* RootProtocols.swift */; };
+		FF37FC2D2618D9A00041E7CF /* UserSettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC2C2618D9A00041E7CF /* UserSettingsBuilder.swift */; };
+		FF37FC302618DB100041E7CF /* UserSettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC2F2618DB100041E7CF /* UserSettingsProtocols.swift */; };
+		FF37FC352618DB960041E7CF /* UserSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC342618DB960041E7CF /* UserSettingsViewModel.swift */; };
+		FF37FC382618DBB70041E7CF /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC372618DBB60041E7CF /* UserSettingsView.swift */; };
+		FF37FC3E2618E2F30041E7CF /* SidebarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC3D2618E2F30041E7CF /* SidebarBuilder.swift */; };
+		FF37FC422618E3290041E7CF /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC412618E3290041E7CF /* SidebarView.swift */; };
+		FF37FC452618E3360041E7CF /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC442618E3360041E7CF /* SidebarViewModel.swift */; };
+		FF37FC482618E3550041E7CF /* SidebarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC472618E3550041E7CF /* SidebarProtocols.swift */; };
 		FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB24261073840075F4BE /* RootBuilder.swift */; };
 		FF66BB29261074D80075F4BE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB28261074D80075F4BE /* RootView.swift */; };
 		FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */; };
@@ -38,6 +46,14 @@
 		FF37FC1C26150B230041E7CF /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		FF37FC2026187DFD0041E7CF /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		FF37FC29261887110041E7CF /* RootProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
+		FF37FC2C2618D9A00041E7CF /* UserSettingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsBuilder.swift; sourceTree = "<group>"; };
+		FF37FC2F2618DB100041E7CF /* UserSettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsProtocols.swift; sourceTree = "<group>"; };
+		FF37FC342618DB960041E7CF /* UserSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewModel.swift; sourceTree = "<group>"; };
+		FF37FC372618DBB60041E7CF /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
+		FF37FC3D2618E2F30041E7CF /* SidebarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarBuilder.swift; sourceTree = "<group>"; };
+		FF37FC412618E3290041E7CF /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		FF37FC442618E3360041E7CF /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
+		FF37FC472618E3550041E7CF /* SidebarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarProtocols.swift; sourceTree = "<group>"; };
 		FF66BB24261073840075F4BE /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		FF66BB28261074D80075F4BE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -81,9 +97,32 @@
 			path = StoredValue;
 			sourceTree = "<group>";
 		};
+		FF37FC322618DB320041E7CF /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				FF37FC2C2618D9A00041E7CF /* UserSettingsBuilder.swift */,
+				FF37FC2F2618DB100041E7CF /* UserSettingsProtocols.swift */,
+				FF37FC372618DBB60041E7CF /* UserSettingsView.swift */,
+				FF37FC342618DB960041E7CF /* UserSettingsViewModel.swift */,
+			);
+			path = UserSettings;
+			sourceTree = "<group>";
+		};
+		FF37FC3B2618E2440041E7CF /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				FF37FC3D2618E2F30041E7CF /* SidebarBuilder.swift */,
+				FF37FC472618E3550041E7CF /* SidebarProtocols.swift */,
+				FF37FC412618E3290041E7CF /* SidebarView.swift */,
+				FF37FC442618E3360041E7CF /* SidebarViewModel.swift */,
+			);
+			path = Sidebar;
+			sourceTree = "<group>";
+		};
 		FF66BB23261073510075F4BE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				FF37FC3B2618E2440041E7CF /* Sidebar */,
 				FF66BB24261073840075F4BE /* RootBuilder.swift */,
 				FF37FC29261887110041E7CF /* RootProtocols.swift */,
 				FF66BB28261074D80075F4BE /* RootView.swift */,
@@ -216,8 +255,9 @@
 		FFD8E6E125F285B4002CFD86 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				FF66BB23261073510075F4BE /* Root */,
 				FF9E2C5125F3A0CB000C1846 /* Login */,
+				FF66BB23261073510075F4BE /* Root */,
+				FF37FC322618DB320041E7CF /* UserSettings */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -295,21 +335,29 @@
 				FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */,
 				FF86F6A22609254B00217F78 /* Host.swift in Sources */,
 				FF86F6AB260928B800217F78 /* HostProtocol.swift in Sources */,
+				FF37FC302618DB100041E7CF /* UserSettingsProtocols.swift in Sources */,
+				FF37FC382618DBB70041E7CF /* UserSettingsView.swift in Sources */,
 				FF37FC2A261887110041E7CF /* RootProtocols.swift in Sources */,
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
+				FF37FC482618E3550041E7CF /* SidebarProtocols.swift in Sources */,
 				FF66BB29261074D80075F4BE /* RootView.swift in Sources */,
 				FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */,
 				FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */,
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
+				FF37FC422618E3290041E7CF /* SidebarView.swift in Sources */,
 				FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
 				FF37FC1D26150B230041E7CF /* ErrorHandling.swift in Sources */,
 				FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */,
 				FF37FC152615084C0041E7CF /* StoredValue.swift in Sources */,
 				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
+				FF37FC2D2618D9A00041E7CF /* UserSettingsBuilder.swift in Sources */,
+				FF37FC3E2618E2F30041E7CF /* SidebarBuilder.swift in Sources */,
 				FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */,
 				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
 				FF37FC1926150AC80041E7CF /* ValueStore.swift in Sources */,
+				FF37FC352618DB960041E7CF /* UserSettingsViewModel.swift in Sources */,
+				FF37FC452618E3360041E7CF /* SidebarViewModel.swift in Sources */,
 				FFBB06AA25EB9B60005EA5A2 /* MainApp.swift in Sources */,
 				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,
 			);

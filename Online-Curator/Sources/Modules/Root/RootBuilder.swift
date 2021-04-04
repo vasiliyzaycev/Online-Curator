@@ -7,30 +7,37 @@
 
 import SwiftUI
 
+final class RootRouter: Router<SidebarRoute>, SidebarRouterProtocol {}
+
 final class RootBuilder: ModuleBuilder {
+    private let sidebarBuilder: SidebarBuilder
+    private let router: RootRouter
+
+    init() {
+        self.router = RootRouter { route in
+            switch route {
+            case .userSettings:
+                return AnyView(Color.red)
+            case .takenToWork:
+                return AnyView(Color.blue)
+            case .callOrders:
+                return AnyView(Color.green)
+            case .myAlerts:
+                return AnyView(Color.orange)
+            case .dataOnGraduates:
+                return AnyView(Color.pink)
+            case .agreements:
+                return AnyView(Color.purple)
+            case .technicalSupport:
+                return AnyView(Color.black)
+            }
+        }
+        self.sidebarBuilder = SidebarBuilder(router: router)
+    }
+
     func build(_ assembly: Assembly) -> some View {
         RootView(
-            sideBarView: SideBarBuilder().build(assembly),
-            mainView: MainBuilder().build(assembly))
-    }
-}
-
-
-final class SideBarBuilder: ModuleBuilder {
-    func build(_ assembly: Assembly) -> some View {
-        HStack {
-            VStack {
-                Text("SideBar")
-                Spacer()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
-        .background(Color("SideBarBackgroundColor"))
-    }
-}
-
-final class MainBuilder: ModuleBuilder {
-    func build(_ assembly: Assembly) -> some View {
-        Text("Privet))")
+            sidebarView: sidebarBuilder.build(assembly),
+            mainView: router.routingView())
     }
 }

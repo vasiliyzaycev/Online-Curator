@@ -49,6 +49,7 @@ private extension LoginView {
     func inputView<T: View>(iconName: String, field: T) -> some View {
         HStack {
             Image(systemName: iconName).foregroundColor(.secondary)
+                .frame(width: 20)
             field.foregroundColor(Color.black)
         }
         .padding()

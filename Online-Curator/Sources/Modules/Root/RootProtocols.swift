@@ -7,24 +7,9 @@
 
 import Foundation
 
-enum RootRoute: Hashable, CaseIterable {
-    case userSettings
-    case takenToWork
-    case callOrders
-    case myAlerts
-    case dataOnGraduates
-    case agreements
-    case technicalSupport
-    case logout
-}
-
 protocol RootRouterProtocol {
-    func open(_ route: RootRoute)
     func close()
 }
 
-protocol RootViewModelProtocol: RootRouterProtocol, ObservableObject {
-    var canAcceptRequests: Bool { get set }
-
-    func logout()
+protocol RootViewModelProtocol: RootRouterProtocol {
 }

@@ -40,19 +40,25 @@ extension Router: RouterProtocol {
 }
 
 extension Router {
-    func navigationView<Content: View>(content: () -> Content) -> some View {
+    func navigationView<Content: View>(
+        @ViewBuilder content: () -> Content
+    ) -> some View {
         NavigationView {
             content().background(navigationLinks())
         }
     }
+
+    func routingView() -> some View {
+        RoutingView(router: self)
+    }
 }
 
-private extension Router {
-    func navigationLinks() -> some View {
+extension Router {
+    private func navigationLinks() -> some View {
         NavigationLinksView(router: self)
     }
     
-    struct NavigationLinksView: View {
+    private struct NavigationLinksView: View {
         @ObservedObject private var router: Router<R>
         
         init(router: Router<R>) {
@@ -70,5 +76,24 @@ private extension Router {
                 }
             }
         }
+    }
+
+    private struct RoutingView: View {
+        @ObservedObject private var router: Router<R>
+
+        init(router: Router<R>) {
+            self.router = router
+        }
+
+        var body: some View {
+            router.currentDestination()
+        }
+    }
+}
+
+private extension Router {
+    func currentDestination() -> AnyView {
+        guard let state = currentState else { return AnyView(EmptyView()) }
+        return destinationForRoute(state)
     }
 }
