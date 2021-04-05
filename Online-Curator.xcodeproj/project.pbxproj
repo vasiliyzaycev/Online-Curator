@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF1CF5B7261B85D9001502F2 /* UserDefaultsValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CF5B6261B85D9001502F2 /* UserDefaultsValueStore.swift */; };
 		FF37FC152615084C0041E7CF /* StoredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC142615084C0041E7CF /* StoredValue.swift */; };
 		FF37FC1926150AC80041E7CF /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC1826150AC80041E7CF /* ValueStore.swift */; };
 		FF37FC1D26150B230041E7CF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC1C26150B230041E7CF /* ErrorHandling.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF1CF5B6261B85D9001502F2 /* UserDefaultsValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsValueStore.swift; sourceTree = "<group>"; };
 		FF37FC142615084C0041E7CF /* StoredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredValue.swift; sourceTree = "<group>"; };
 		FF37FC1826150AC80041E7CF /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		FF37FC1C26150B230041E7CF /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				FF37FC142615084C0041E7CF /* StoredValue.swift */,
 				FF37FC1826150AC80041E7CF /* ValueStore.swift */,
 				FF37FC1C26150B230041E7CF /* ErrorHandling.swift */,
+				FF1CF5B6261B85D9001502F2 /* UserDefaultsValueStore.swift */,
 			);
 			path = StoredValue;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */,
 				FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */,
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
+				FF1CF5B7261B85D9001502F2 /* UserDefaultsValueStore.swift in Sources */,
 				FF37FC422618E3290041E7CF /* SidebarView.swift in Sources */,
 				FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
