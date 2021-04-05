@@ -21,6 +21,7 @@ struct User: Decodable {
     let city: String
     let subjectOfCountry: String
     let nameOfPhoto: String
+    let accessToken: String
 }
 
 extension User {
@@ -38,5 +39,6 @@ extension User {
         case city
         case subjectOfCountry = "subject_of_country"
         case nameOfPhoto = "name_of_photo"
+        case accessToken = "access_token"
     }
 }
