@@ -5,7 +5,7 @@
 //  Created by Vasiliy Zaytsev on 31.03.2021.
 //
 
-protocol ValueStore: AnyObject {
+protocol ValueStore {
     associatedtype Value: Codable
     associatedtype ErrorType: Error = Error
 

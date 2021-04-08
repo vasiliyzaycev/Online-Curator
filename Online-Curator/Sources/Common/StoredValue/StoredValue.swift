@@ -5,12 +5,13 @@
 //  Created by Vasiliy Zaytsev on 31.03.2021.
 //
 
+@propertyWrapper
 struct StoredValue<Value: Codable> {
     private let getClosure: () throws -> Value?
     private let setClosure: (Value?) throws -> Void
     private let errorHandler: ErrorHandler
-    
-    var value: Value? {
+
+    var wrappedValue: Value? {
         get { getValue() }
         set { setValue(newValue) }
     }

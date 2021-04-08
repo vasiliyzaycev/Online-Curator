@@ -8,8 +8,9 @@
 import Foundation
 
 final class SidebarViewModel: SidebarViewModelProtocol {
-    private let router: SidebarRouterProtocol
     var canAcceptRequests: Bool = false
+    
+    private let router: SidebarRouterProtocol
 
     init(router: SidebarRouterProtocol) {
         self.router = router

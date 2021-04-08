@@ -9,12 +9,37 @@ import Foundation
 
 final class Assembly {
     lazy var userProvider: UserProvider = {
-        UserProvider(host: host, loginURL: url(for: "login"))
+        UserProvider(user: user, host: host, loginURL: url(for: "login"))
     }()
     lazy var host: HostProtocol = {
         Host(baseURL: url(for: "baseURL"))
     }()
-    
+
+    private lazy var user: StoredValue<User> = {
+        var rez = StoredValue(
+            valueStore: userValueStore,
+            errorHandler: userStoreErrorHandler)
+        rez.wrappedValue = nil
+        return rez
+    }()
+    private lazy var userValueStore = {
+        PersistentValueStore<User>(dataStore: userDataStore)
+    }()
+    private lazy var userStoreErrorHandler = {
+        StoreErrorHandler { (error: UserDefaultsDataStoreError) in
+            switch error {
+            case .failedSynchronize:
+                print("Failed synchronize UserDefaults")
+            case .storedDataTypeMismatch:
+                print("Stored value type mismatch in UserDefaults")
+            }
+        }
+    }()
+    private lazy var userDataStore = {
+        UserDefaultsDataStore(
+            userDefaults: UserDefaults.standard,
+            valueKey: "stored_user")
+    }()
     private var urls: [String: URL] = loadURLs()
 }
 

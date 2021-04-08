@@ -8,13 +8,20 @@
 import Combine
 import Foundation
 
-class UserProvider: ObservableObject {
-    @Published private(set) var user: User? = nil
+final class UserProvider: ObservableObject {
+    @StoredValue
+    var user: User? { willSet { objectWillChange.send() } }
+
     private let host: HostProtocol
     private let loginURL: URL
     private var bag: AnyCancellable? = nil
     
-    init(host: HostProtocol, loginURL: URL) {
+    init(
+        user: StoredValue<User>,
+        host: HostProtocol,
+        loginURL: URL
+    ) {
+        self._user = user
         self.host = host
         self.loginURL = loginURL
     }

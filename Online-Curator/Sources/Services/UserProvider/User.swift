@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct User {
     let id: String
     let statusOfBusy: String
     let firstName: String
@@ -24,7 +24,7 @@ struct User: Codable {
     let accessToken: String
 }
 
-extension User {
+extension User: Codable {
     private enum CodingKeys: String, CodingKey {
         case id
         case statusOfBusy = "status_of_busy"

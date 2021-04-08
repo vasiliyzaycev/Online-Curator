@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct OnlineCuratorApp: App {
     private let assembly = Assembly()
-    @ObservedObject var userProvider: UserProvider
+    @ObservedObject
+    private var userProvider: UserProvider
     
     init() {
         self.userProvider = assembly.userProvider
