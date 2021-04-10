@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF09541226217B7C00BF20FE /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09541126217B7C00BF20FE /* URLProvider.swift */; };
+		FF0954152621811000BF20FE /* UserAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0954142621811000BF20FE /* UserAssembly.swift */; };
+		FF09541826218F9F00BF20FE /* UserAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09541726218F9F00BF20FE /* UserAssemblyProtocol.swift */; };
+		FF09541B26218FD100BF20FE /* URLProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09541A26218FD100BF20FE /* URLProviderProtocol.swift */; };
 		FF1119C9261CEB1700A785E2 /* PersistentValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1119C8261CEB1600A785E2 /* PersistentValueStore.swift */; };
 		FF1119CD2620E69700A785E2 /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1119CC2620E69700A785E2 /* JSONCoder.swift */; };
 		FF1119D02620E8FC00A785E2 /* InMemoryValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1119CF2620E8FC00A785E2 /* InMemoryValueStore.swift */; };
@@ -47,6 +51,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF09541126217B7C00BF20FE /* URLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
+		FF0954142621811000BF20FE /* UserAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAssembly.swift; sourceTree = "<group>"; };
+		FF09541726218F9F00BF20FE /* UserAssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAssemblyProtocol.swift; sourceTree = "<group>"; };
+		FF09541A26218FD100BF20FE /* URLProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProviderProtocol.swift; sourceTree = "<group>"; };
 		FF1119C8261CEB1600A785E2 /* PersistentValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentValueStore.swift; sourceTree = "<group>"; };
 		FF1119CC2620E69700A785E2 /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
 		FF1119CF2620E8FC00A785E2 /* InMemoryValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryValueStore.swift; sourceTree = "<group>"; };
@@ -99,6 +107,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF09541D262193C300BF20FE /* URLProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FF09541A26218FD100BF20FE /* URLProviderProtocol.swift */,
+				FF09541126217B7C00BF20FE /* URLProvider.swift */,
+			);
+			path = URLProvider;
+			sourceTree = "<group>";
+		};
+		FF09541F262193CF00BF20FE /* UserAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				FF09541726218F9F00BF20FE /* UserAssemblyProtocol.swift */,
+				FF0954142621811000BF20FE /* UserAssembly.swift */,
+			);
+			path = UserAssembly;
+			sourceTree = "<group>";
+		};
+		FF095421262198EA00BF20FE /* Assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF09541D262193C300BF20FE /* URLProvider */,
+				FF09541F262193CF00BF20FE /* UserAssembly */,
+				FFD8E6D425F25FFA002CFD86 /* Assembly.swift */,
+			);
+			path = Assemblys;
+			sourceTree = "<group>";
+		};
 		FF1119D52621645E00A785E2 /* ValueStores */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,7 +331,7 @@
 			children = (
 				FF86F6A02609250B00217F78 /* Networking */,
 				FFD8E6DB25F2605F002CFD86 /* UserProvider */,
-				FFD8E6D425F25FFA002CFD86 /* Assembly.swift */,
+				FF095421262198EA00BF20FE /* Assemblys */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -397,6 +433,7 @@
 				FF37FC382618DBB70041E7CF /* UserSettingsView.swift in Sources */,
 				FF37FC2A261887110041E7CF /* RootProtocols.swift in Sources */,
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
+				FF09541226217B7C00BF20FE /* URLProvider.swift in Sources */,
 				FF37FC482618E3550041E7CF /* SidebarProtocols.swift in Sources */,
 				FF66BB29261074D80075F4BE /* RootView.swift in Sources */,
 				FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */,
@@ -405,16 +442,19 @@
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
 				FF1CF5B7261B85D9001502F2 /* UserDefaultsDataStore.swift in Sources */,
 				FF1119E0262166C500A785E2 /* PersistentDataStore.swift in Sources */,
+				FF0954152621811000BF20FE /* UserAssembly.swift in Sources */,
 				FF37FC422618E3290041E7CF /* SidebarView.swift in Sources */,
 				FF1119D02620E8FC00A785E2 /* InMemoryValueStore.swift in Sources */,
 				FF86F6B6260E6BE700217F78 /* UserProviderProtocol.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
+				FF09541826218F9F00BF20FE /* UserAssemblyProtocol.swift in Sources */,
 				FF37FC1D26150B230041E7CF /* ErrorHandling.swift in Sources */,
 				FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */,
 				FF1119C9261CEB1700A785E2 /* PersistentValueStore.swift in Sources */,
 				FF1119CD2620E69700A785E2 /* JSONCoder.swift in Sources */,
 				FF37FC152615084C0041E7CF /* StoredValue.swift in Sources */,
 				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
+				FF09541B26218FD100BF20FE /* URLProviderProtocol.swift in Sources */,
 				FF37FC2D2618D9A00041E7CF /* UserSettingsBuilder.swift in Sources */,
 				FF37FC3E2618E2F30041E7CF /* SidebarBuilder.swift in Sources */,
 				FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */,

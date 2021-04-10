@@ -8,19 +8,18 @@
 import Foundation
 
 final class PersistentValueStore<Value: Codable> {
+    private let dataCoder: DataCoder
     private let dataStore: PersistentDataStore
-    private let coder: DataCoder
 
-    init(dataStore: PersistentDataStore, coder: DataCoder) {
+    init(dataCoder: DataCoder, dataStore: PersistentDataStore) {
+        self.dataCoder = dataCoder
         self.dataStore = dataStore
-        self.coder = coder
     }
 }
 
 extension PersistentValueStore: ValueStore {
     func save(_ value: Value?) throws {
-        let d = try data(from: value)
-        try dataStore.save(data: d)
+        try dataStore.save(data: try data(from: value))
     }
 
     func load() throws -> Value? {
@@ -31,11 +30,11 @@ extension PersistentValueStore: ValueStore {
 extension PersistentValueStore {
     private func data(from value: Value?) throws -> Data? {
         guard let value = value else { return nil }
-        return try coder.encode(value)
+        return try dataCoder.encode(value)
     }
 
     private func value(from data: Data?) throws -> Value? {
         guard let data = data else { return nil }
-        return try coder.decode(Value.self, from: data)
+        return try dataCoder.decode(Value.self, from: data)
     }
 }
