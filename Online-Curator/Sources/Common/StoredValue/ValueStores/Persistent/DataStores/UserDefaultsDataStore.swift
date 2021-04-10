@@ -16,10 +16,7 @@ final class UserDefaultsDataStore: PersistentDataStore {
     private let userDefaults: UserDefaults
     private let valueKey: String
 
-    init(
-        userDefaults: UserDefaults,
-        valueKey: String
-    ) {
+    init(userDefaults: UserDefaults, valueKey: String) {
         self.userDefaults = userDefaults
         self.valueKey = valueKey
     }

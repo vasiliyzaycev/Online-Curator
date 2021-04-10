@@ -23,7 +23,9 @@ final class Assembly {
         return rez
     }()
     private lazy var userValueStore = {
-        PersistentValueStore<User>(dataStore: userDataStore)
+        PersistentValueStore<User>(
+            dataStore: userDataStore,
+            coder: JSONCoder())
     }()
     private lazy var userStoreErrorHandler = {
         StoreErrorHandler { (error: UserDefaultsDataStoreError) in

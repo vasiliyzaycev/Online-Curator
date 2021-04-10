@@ -7,18 +7,17 @@
 
 import Foundation
 
-protocol PersistentDataStore {
-    func save(data: Data?) throws
-    func loadData() throws -> Data?
+final class PersistentValueStore<Value: Codable> {
+    private let dataStore: PersistentDataStore
+    private let coder: DataCoder
+
+    init(dataStore: PersistentDataStore, coder: DataCoder) {
+        self.dataStore = dataStore
+        self.coder = coder
+    }
 }
 
-final class PersistentValueStore<Value: Codable>: ValueStore {
-    private let dataStore: PersistentDataStore
-
-    init(dataStore: PersistentDataStore) {
-        self.dataStore = dataStore
-    }
-
+extension PersistentValueStore: ValueStore {
     func save(_ value: Value?) throws {
         let d = try data(from: value)
         try dataStore.save(data: d)
@@ -32,11 +31,11 @@ final class PersistentValueStore<Value: Codable>: ValueStore {
 extension PersistentValueStore {
     private func data(from value: Value?) throws -> Data? {
         guard let value = value else { return nil }
-        return try JSONEncoder().encode(value)  //TODO remove concrete Encoder
+        return try coder.encode(value)
     }
 
     private func value(from data: Data?) throws -> Value? {
         guard let data = data else { return nil }
-        return try JSONDecoder().decode(Value.self, from: data) //TODO remove concrete Decoder
+        return try coder.decode(Value.self, from: data)
     }
 }
