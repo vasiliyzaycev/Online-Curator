@@ -17,10 +17,18 @@ protocol LoginRouterProtocol {
     func close()
 }
 
+enum LoginViewModelState: Equatable {
+    case prohibited
+    case allowed
+    case processing
+    case error(String)
+}
+
 protocol LoginViewModelProtocol: LoginRouterProtocol, ObservableObject {
+    var state: LoginViewModelState { get }
     var login: String { get set }
     var password: String { get set }
-    var isLoginButtonActive: Bool { get }
 
     func startLogin()
+    func hideAlert()
 }

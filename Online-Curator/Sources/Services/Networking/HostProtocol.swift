@@ -45,9 +45,9 @@ enum HttpMethod: Equatable {
     }
 }
 
-enum HostError: Swift.Error {
+enum HostError: Error {
     case networking(URLError)
-    case decoding(Swift.Error)
+    case decoding(Error)
 }
 
 protocol URLQueryConvertible {

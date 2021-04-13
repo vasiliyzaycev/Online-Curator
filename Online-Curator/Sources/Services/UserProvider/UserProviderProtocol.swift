@@ -8,6 +8,9 @@
 import Foundation
 
 protocol UserProviderProtocol {
-    func start(login: String, with password: String)
+    func start(
+        login: String,
+        with password: String,
+        complition: @escaping (HostError?) -> Void)
     func logout()
 }

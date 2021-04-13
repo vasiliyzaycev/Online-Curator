@@ -28,23 +28,24 @@ final class UserProvider: ObservableObject {
 }
 
 extension UserProvider: UserProviderProtocol {
-    func start(login: String, with password: String) {
-        let request = createRequest(login, password)
+    func start(
+        login: String,
+        with password: String,
+        complition: @escaping (HostError?) -> Void
+    ) {
         bag = host.publisherForArrayWrappedValue(for: request)
-            .sink {
-                //TODO: Refactor this
-                switch $0 {
-                case .failure(.decoding(let error)):
-                    print(error.localizedDescription)
-                case .failure(.networking(let error)):
-                    print(error.localizedDescription)
-                case .finished:
-                    print("finished")
-                }
-            } receiveValue: { [weak self] in
+            .handleEvents(receiveOutput: { [weak self] in
                 guard let self = self else { return }
                 self.user = $0
-            }
+            })
+            .ignoreOutput()
+            .eraseToAnyPublisher()
+            .sink {
+                switch $0 {
+                case .failure(let error):   complition(error)
+                case .finished:             complition(nil)
+                }
+            } receiveValue: { _ in }
     }
     
     func logout() {
