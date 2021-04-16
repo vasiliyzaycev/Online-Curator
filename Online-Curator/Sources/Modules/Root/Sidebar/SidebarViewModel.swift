@@ -9,10 +9,15 @@ import Foundation
 
 final class SidebarViewModel: SidebarViewModelProtocol {
     var canAcceptRequests: Bool = false
-    
+
+    private let userProvider: UserProviderProtocol
     private let router: SidebarRouterProtocol
 
-    init(router: SidebarRouterProtocol) {
+    init(
+        userProvider: UserProviderProtocol,
+        router: SidebarRouterProtocol
+    ) {
+        self.userProvider = userProvider
         self.router = router
     }
 
@@ -21,6 +26,6 @@ final class SidebarViewModel: SidebarViewModelProtocol {
     }
 
     func close() {
-        router.close()
+        userProvider.logout()
     }
 }

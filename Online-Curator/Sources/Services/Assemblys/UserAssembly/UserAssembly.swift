@@ -9,11 +9,9 @@ import Foundation
 
 final class UserAssembly: UserAssemblyProtocol {
     lazy var user: StoredValue<User> = {
-        var rez = StoredValue(
+        StoredValue(
             valueStore: createValueStore(),
             errorHandler: createErrorHandler())
-        rez.wrappedValue = nil  //TODO delete when logout works
-        return rez
     }()
 }
 

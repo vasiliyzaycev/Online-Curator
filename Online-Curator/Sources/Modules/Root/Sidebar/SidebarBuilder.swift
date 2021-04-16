@@ -15,6 +15,9 @@ final class SidebarBuilder: ModuleBuilder {
     }
 
     func build(_ assembly: Assembly) -> some View {
-        SidebarView(viewModel: SidebarViewModel(router: router))
+        SidebarView(
+            viewModel: SidebarViewModel(
+                userProvider: assembly.userProvider,
+                router: router))
     }
 }

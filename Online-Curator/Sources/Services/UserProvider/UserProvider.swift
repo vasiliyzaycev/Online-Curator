@@ -33,6 +33,7 @@ extension UserProvider: UserProviderProtocol {
         with password: String,
         complition: @escaping (HostError?) -> Void
     ) {
+        let request = createRequest(login, password)
         bag = host.publisherForArrayWrappedValue(for: request)
             .handleEvents(receiveOutput: { [weak self] in
                 guard let self = self else { return }
