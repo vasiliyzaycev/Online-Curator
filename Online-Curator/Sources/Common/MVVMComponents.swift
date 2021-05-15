@@ -21,11 +21,16 @@ protocol RouterProtocol {
 }
 
 class Router<R: Hashable & CaseIterable>: ObservableObject {
-    private let destinationForRoute: (R) -> AnyView
     @Published private var currentState: R? = nil
+    private let destinationForRoute: (R) -> AnyView
+    private let completion: (() -> Void)?
     
-    init(_ destinationForRoute: @escaping (R) -> AnyView) {
+    init(
+        destinationForRoute: @escaping (R) -> AnyView,
+        completion: (() -> Void)? = nil
+    ) {
         self.destinationForRoute = destinationForRoute
+        self.completion = completion
     }
 }
 
@@ -35,7 +40,8 @@ extension Router: RouterProtocol {
     }
 
     func close() {
-        currentState = nil
+        currentState = nil //TODO this should be executed in child completion
+        completion?()
     }
 }
 

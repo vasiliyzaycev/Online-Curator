@@ -51,10 +51,6 @@ final class LoginViewModel: LoginViewModelProtocol {
     func open(_ route: LoginRoute) {
         router.open(route)
     }
-    
-    func close() {
-        router.close()
-    }
 }
 
 extension LoginViewModel {

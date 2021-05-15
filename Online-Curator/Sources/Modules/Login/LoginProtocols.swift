@@ -14,7 +14,6 @@ enum LoginRoute: Hashable, CaseIterable {
 
 protocol LoginRouterProtocol {
     func open(_ route: LoginRoute)
-    func close()
 }
 
 enum LoginViewModelState: Equatable {
