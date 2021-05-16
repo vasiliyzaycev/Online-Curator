@@ -1,5 +1,5 @@
 //
-//  HostProtocol.swift
+//  NetworkProtocols.swift
 //  Online-Curator
 //
 //  Created by Vasiliy Zaytsev on 22.03.2021.
@@ -27,10 +27,30 @@ protocol HostProtocol {
     ) -> AnyPublisher<Data, HostError>
 }
 
+protocol RequestFactoryProtocol {
+    func createRequest<T: Codable>(
+        url: URL,
+        params: [String: String],
+        headers: [String: String]
+    ) -> Request<T>
+
+    func createRequest<T: Codable>(url: URL) -> Request<T>
+}
+
 struct Request<Response> {
     let url: URL
     let method: HttpMethod
-    var headers: [String: String] = [:]
+    let headers: [String: String]
+
+    init(
+        url: URL,
+        method: HttpMethod,
+        headers: [String: String] = [:]
+    ) {
+        self.url = url
+        self.method = method
+        self.headers = headers
+    }
 }
 
 enum HttpMethod: Equatable {

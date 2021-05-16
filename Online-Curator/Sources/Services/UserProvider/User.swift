@@ -10,9 +10,9 @@ import Foundation
 struct User {
     let id: String
     let statusOfBusy: String
-    let firstName: String
+    let name: String
     let middleName: String
-    let lastName: String
+    let surname: String
     let childrenHome: String
     let typeOfSpecialist: String
     let email: String
@@ -28,9 +28,9 @@ extension User: Codable {
     private enum CodingKeys: String, CodingKey {
         case id
         case statusOfBusy = "status_of_busy"
-        case firstName = "name"
+        case name
         case middleName = "middlename"
-        case lastName = "surname"
+        case surname
         case childrenHome = "child_home"
         case typeOfSpecialist = "type_of_specialist"
         case email

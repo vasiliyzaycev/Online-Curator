@@ -8,9 +8,17 @@
 import Combine
 import Foundation
 
-final class UserProvider: ObservableObject {
+final class UserProvider: ObservableObject, UserCredentialsProtocol {
     @StoredValue
     var user: User? { willSet { objectWillChange.send() } }
+    var id: String {
+        guard let user = user else { fatalError("User is not logged in") }
+        return user.id
+    }
+    var accessToken: String {
+        guard let user = user else { fatalError("User is not logged in") }
+        return user.accessToken
+    }
 
     private let host: HostProtocol
     private let loginURL: URL

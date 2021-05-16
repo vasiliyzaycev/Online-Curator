@@ -1,5 +1,5 @@
 //
-//  UserProviderProtocol.swift
+//  UserProviderProtocols.swift
 //  Online-Curator
 //
 //  Created by Vasiliy Zaytsev on 26.03.2021.
@@ -13,4 +13,9 @@ protocol UserProviderProtocol {
         with password: String,
         complition: @escaping (HostError?) -> Void)
     func logout()
+}
+
+protocol UserCredentialsProtocol {
+    var id: String { get }
+    var accessToken: String { get }
 }
