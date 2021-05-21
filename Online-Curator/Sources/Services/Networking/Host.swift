@@ -112,21 +112,16 @@ private extension URLSession {
     ) -> AnyPublisher<Value, HostError> {
         publisher(for: request)
             .decode(type: [Value].self, decoder: decoder)
-            .mapError(HostError.decoding)
-            .flatMap { wrappedValue -> AnyPublisher<Value, HostError> in
-                guard let value = wrappedValue.first else {
+            .tryMap { array in
+                guard let value = array.first else {
                     let error = DecodingError.valueNotFound(
                         Value.self,
                         .init(codingPath: [], debugDescription: "empty array"))
-                    return Fail(
-                        outputType: Value.self,
-                        failure: HostError.decoding(error))
-                        .eraseToAnyPublisher()
+                    throw HostError.decoding(error)
                 }
-                return Just(value)
-                    .setFailureType(to: HostError.self)
-                    .eraseToAnyPublisher()
+                return value
             }
+            .mapError(HostError.decoding)
             .eraseToAnyPublisher()
     }
     
