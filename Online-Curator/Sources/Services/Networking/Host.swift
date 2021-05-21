@@ -114,10 +114,9 @@ private extension URLSession {
             .decode(type: [Value].self, decoder: decoder)
             .tryMap { array in
                 guard let value = array.first else {
-                    let error = DecodingError.valueNotFound(
+                    throw DecodingError.valueNotFound(
                         Value.self,
                         .init(codingPath: [], debugDescription: "empty array"))
-                    throw HostError.decoding(error)
                 }
                 return value
             }
