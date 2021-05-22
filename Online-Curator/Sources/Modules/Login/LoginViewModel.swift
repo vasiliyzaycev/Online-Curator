@@ -24,10 +24,11 @@ final class LoginViewModel: LoginViewModelProtocol {
         self.userProvider = userProvider
         self.router = router
         $login
-            .merge(with: $password)
-            .sink { [weak self] _ in
+            .combineLatest($password)
+            .sink { [weak self] (login, password) in
                 guard let self = self else { return }
-                self.updateState(.updateCredentials(self.isValidCredentials()))
+                let isValid = self.isValidEmail(login) && !password.isEmpty
+                self.updateState(.updateCredentials(isValid))
             }
             .store(in: &bag)
     }
@@ -63,27 +64,29 @@ extension LoginViewModel {
     }
 
     private func updateState(_ action: Action) {
-        switch action {
-        case .updateCredentials(let isValid):
-            state = isValid ? .allowed : .prohibited
-            //TODO exclude incorrect state transitions
-        case .login:
-            state = .processing
-            //TODO exclude incorrect state transitions
-        case .success:
-            state = .allowed
-            //TODO exclude incorrect state transitions
-        case .showError(_):
-            state = .error("Что-то пошло не так")
-            //TODO exclude incorrect state transitions
-        case .hideError:
-            state = .allowed
-            //TODO exclude incorrect state transitions
-        }
+        state = reduce(state, action)
     }
 
-    private func isValidCredentials() -> Bool {
-        isValidEmail(login) && !password.isEmpty
+    private func reduce(
+        _ state: LoginViewModelState,
+        _ action: Action
+    ) -> LoginViewModelState {
+        switch (state, action) {
+        case (.prohibited, .updateCredentials(let isValid)),
+             (.allowed, .updateCredentials(let isValid)):
+            return isValid ? .allowed : .prohibited
+        case (.allowed, .login):
+            return .processing
+        case (.processing, .success):
+            return .allowed
+        case (.processing, .showError(_)):
+            return .error("Что-то пошло не так")
+        case (.error, .hideError):
+            return .allowed
+        case (let state, let action):
+            assertionFailure("Invalid state: \(state) for action: \(action)")
+            return state
+        }
     }
 
     private func isValidEmail(_ email: String) -> Bool {
