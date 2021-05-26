@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RefreshableScrollView<Content: View>: UIViewRepresentable {
-    let content: Content
-    let onRefresh: (UIRefreshControl) -> Void
-
+    private let content: Content
+    private let onRefresh: (UIRefreshControl) -> Void
     private let refreshControl: UIRefreshControl
 
     init(

@@ -15,9 +15,9 @@ extension View {
 
 /// https://filipmolcik.com/navigationview-dynamic-background-color-in-swiftui/
 struct NavigationBarModifier: ViewModifier {
-    var backgroundColor: UIColor?
+    private let backgroundColor: UIColor?
     
-    init( backgroundColor: UIColor?) {
+    init(backgroundColor: UIColor?) {
         self.backgroundColor = backgroundColor
         sutupNavBar(appearance: defaultAppearance())
     }

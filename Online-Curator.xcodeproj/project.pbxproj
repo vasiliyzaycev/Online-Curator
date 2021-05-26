@@ -34,6 +34,7 @@
 		FF55E11A2659091200124FD3 /* TakeToWorkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1162659091200124FD3 /* TakeToWorkBuilder.swift */; };
 		FF55E11B2659091200124FD3 /* TakeToWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1172659091200124FD3 /* TakeToWorkViewModel.swift */; };
 		FF55E11C2659091200124FD3 /* TakeToWorkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1182659091200124FD3 /* TakeToWorkProtocols.swift */; };
+		FF56A893265EE86900583445 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56A892265EE86900583445 /* ErrorView.swift */; };
 		FF5BEF1F26596694003D0566 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */; };
 		FF5BEF212659774B003D0566 /* LoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF202659774B003D0566 /* LoadableState.swift */; };
 		FF5BEF23265C29EE003D0566 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */; };
@@ -91,6 +92,7 @@
 		FF55E1162659091200124FD3 /* TakeToWorkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkBuilder.swift; sourceTree = "<group>"; };
 		FF55E1172659091200124FD3 /* TakeToWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkViewModel.swift; sourceTree = "<group>"; };
 		FF55E1182659091200124FD3 /* TakeToWorkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkProtocols.swift; sourceTree = "<group>"; };
+		FF56A892265EE86900583445 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		FF5BEF202659774B003D0566 /* LoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableState.swift; sourceTree = "<group>"; };
 		FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				FF5BEF202659774B003D0566 /* LoadableState.swift */,
 				FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */,
 				FF976A56265EC52300493A5A /* ActionButton.swift */,
+				FF56A892265EE86900583445 /* ErrorView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				FF5BEF23265C29EE003D0566 /* ProgressHUD.swift in Sources */,
 				FF37FC2A261887110041E7CF /* RootProtocols.swift in Sources */,
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
+				FF56A893265EE86900583445 /* ErrorView.swift in Sources */,
 				FF09541226217B7C00BF20FE /* URLProvider.swift in Sources */,
 				FF37FC482618E3550041E7CF /* SidebarProtocols.swift in Sources */,
 				FF66BB29261074D80075F4BE /* RootView.swift in Sources */,

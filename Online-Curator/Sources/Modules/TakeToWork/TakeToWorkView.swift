@@ -27,13 +27,8 @@ struct TakeToWorkView<ViewModel: TakeToWorkViewModelProtocol>: View {
 
 extension TakeToWorkView {
     private func errorView(_ error: FetchError) -> some View {
-        VStack(spacing: 25) {
-            Image(systemName: "exclamationmark.icloud")
-                .font(.system(size: 50))
-            Text(error.description).fontWeight(.semibold)
-            ActionButton(title: "Попробоавть еще", width: 200) {
-                viewModel.update()
-            }
+        ErrorView(message: error.description) {
+            viewModel.update()
         }
     }
 

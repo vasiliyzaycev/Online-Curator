@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ProgressHUD: View {
-    let opacity: Double
-    let padding: CGFloat
-    let cornerRadius: CGFloat
+    private let opacity: Double
+    private let padding: CGFloat
+    private let cornerRadius: CGFloat
 
     init(
         opacity: Double = 0.2,

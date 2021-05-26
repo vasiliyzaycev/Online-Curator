@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ActionButton: View {
-    let title: String
-    let width: CGFloat
-    let action: () -> Void
+    private let title: String
+    private let width: CGFloat
+    private let action: () -> Void
 
     init(
         title: String,
