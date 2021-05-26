@@ -33,7 +33,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                     Alert(title: Text(errorMessage.id))
                 }
             if case .processing = viewModel.state {
-                progressHUD()
+                ProgressHUD()
             }
         }
         .edgesIgnoringSafeArea([.top, .bottom])
@@ -61,16 +61,6 @@ extension LoginView {
         .background(Image("background_main").resizable())
     }
 
-    private func progressHUD() -> some View {
-        ZStack {
-            Color.black.opacity(0.2)
-            ProgressView()
-                .padding(Constants.padding/2)
-                .background(Color.white)
-                .cornerRadius(Constants.radius)
-        }
-    }
-
     private func loginView() -> some View {
         inputView(
             iconName: "person",
@@ -96,17 +86,9 @@ extension LoginView {
     }
     
     private func signInButton() -> some View {
-        Button {
+        ActionButton(title: "Войти", width: 150) {
             viewModel.startLogin()
-        } label: {
-            Text("Войти")
-                .fontWeight(.heavy)
-                .padding()
         }
-        .frame(width: 150)
-        .background(Color(red: 35/255, green: 86/255, blue: 71/255))
-        .foregroundColor(Color.white)
-        .cornerRadius(Constants.radius)
         .disabled(viewModel.state != .allowed)
         .opacity(viewModel.state == .allowed ? 1.0 : 0.4)
     }

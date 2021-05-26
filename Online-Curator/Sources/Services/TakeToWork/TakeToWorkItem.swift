@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TakeToWorkItem {
+struct TakeToWorkItem: Hashable {
     let surname: String
     let name: String
     let middleName: String

@@ -10,7 +10,7 @@ import SwiftUI
 final class LoginRouter: Router<LoginRoute>, LoginRouterProtocol {}
 
 final class LoginBuilder: ModuleBuilder {
-    lazy var router: LoginRouter = {
+    private lazy var router: LoginRouter = {
         LoginRouter { route in
             switch route {
             case .registration:

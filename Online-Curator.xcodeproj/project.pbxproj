@@ -30,6 +30,13 @@
 		FF37FC422618E3290041E7CF /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC412618E3290041E7CF /* SidebarView.swift */; };
 		FF37FC452618E3360041E7CF /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC442618E3360041E7CF /* SidebarViewModel.swift */; };
 		FF37FC482618E3550041E7CF /* SidebarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37FC472618E3550041E7CF /* SidebarProtocols.swift */; };
+		FF55E1192659091200124FD3 /* TakeToWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1152659091200124FD3 /* TakeToWorkView.swift */; };
+		FF55E11A2659091200124FD3 /* TakeToWorkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1162659091200124FD3 /* TakeToWorkBuilder.swift */; };
+		FF55E11B2659091200124FD3 /* TakeToWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1172659091200124FD3 /* TakeToWorkViewModel.swift */; };
+		FF55E11C2659091200124FD3 /* TakeToWorkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1182659091200124FD3 /* TakeToWorkProtocols.swift */; };
+		FF5BEF1F26596694003D0566 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */; };
+		FF5BEF212659774B003D0566 /* LoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF202659774B003D0566 /* LoadableState.swift */; };
+		FF5BEF23265C29EE003D0566 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */; };
 		FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB24261073840075F4BE /* RootBuilder.swift */; };
 		FF66BB29261074D80075F4BE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB28261074D80075F4BE /* RootView.swift */; };
 		FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */; };
@@ -38,6 +45,7 @@
 		FF86F6B1260E66A400217F78 /* Dictionary+URLQueryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6B0260E66A400217F78 /* Dictionary+URLQueryConvertible.swift */; };
 		FF86F6B6260E6BE700217F78 /* UserProviderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6B5260E6BE700217F78 /* UserProviderProtocols.swift */; };
 		FF87935925FE386100B3D140 /* URLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF87935825FE386100B3D140 /* URLs.plist */; };
+		FF976A57265EC52300493A5A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF976A56265EC52300493A5A /* ActionButton.swift */; };
 		FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */; };
 		FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */; };
 		FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */; };
@@ -79,6 +87,13 @@
 		FF37FC412618E3290041E7CF /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		FF37FC442618E3360041E7CF /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		FF37FC472618E3550041E7CF /* SidebarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarProtocols.swift; sourceTree = "<group>"; };
+		FF55E1152659091200124FD3 /* TakeToWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkView.swift; sourceTree = "<group>"; };
+		FF55E1162659091200124FD3 /* TakeToWorkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkBuilder.swift; sourceTree = "<group>"; };
+		FF55E1172659091200124FD3 /* TakeToWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkViewModel.swift; sourceTree = "<group>"; };
+		FF55E1182659091200124FD3 /* TakeToWorkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkProtocols.swift; sourceTree = "<group>"; };
+		FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
+		FF5BEF202659774B003D0566 /* LoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableState.swift; sourceTree = "<group>"; };
+		FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		FF66BB24261073840075F4BE /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		FF66BB28261074D80075F4BE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -87,6 +102,7 @@
 		FF86F6B0260E66A400217F78 /* Dictionary+URLQueryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+URLQueryConvertible.swift"; sourceTree = "<group>"; };
 		FF86F6B5260E6BE700217F78 /* UserProviderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderProtocols.swift; sourceTree = "<group>"; };
 		FF87935825FE386100B3D140 /* URLs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLs.plist; sourceTree = "<group>"; };
+		FF976A56265EC52300493A5A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMComponents.swift; sourceTree = "<group>"; };
@@ -223,6 +239,17 @@
 			path = Sidebar;
 			sourceTree = "<group>";
 		};
+		FF55E0932658DF0D00124FD3 /* TakeToWork */ = {
+			isa = PBXGroup;
+			children = (
+				FF55E1182659091200124FD3 /* TakeToWorkProtocols.swift */,
+				FF55E1162659091200124FD3 /* TakeToWorkBuilder.swift */,
+				FF55E1172659091200124FD3 /* TakeToWorkViewModel.swift */,
+				FF55E1152659091200124FD3 /* TakeToWorkView.swift */,
+			);
+			path = TakeToWork;
+			sourceTree = "<group>";
+		};
 		FF66BB23261073510075F4BE /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,10 +311,10 @@
 		FF9E2C5125F3A0CB000C1846 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */,
 				FF37FC2026187DFD0041E7CF /* LoginProtocols.swift */,
-				FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */,
+				FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */,
 				FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */,
+				FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -298,6 +325,10 @@
 				FF37FC1726150A740041E7CF /* StoredValue */,
 				FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */,
 				FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */,
+				FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */,
+				FF5BEF202659774B003D0566 /* LoadableState.swift */,
+				FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */,
+				FF976A56265EC52300493A5A /* ActionButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -361,6 +392,7 @@
 		FFD8E6E125F285B4002CFD86 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FF55E0932658DF0D00124FD3 /* TakeToWork */,
 				FF9E2C5125F3A0CB000C1846 /* Login */,
 				FF66BB23261073510075F4BE /* Root */,
 				FF37FC322618DB320041E7CF /* UserSettings */,
@@ -462,8 +494,10 @@
 				FF86F6AB260928B800217F78 /* NetworkProtocols.swift in Sources */,
 				FF37FC302618DB100041E7CF /* UserSettingsProtocols.swift in Sources */,
 				FF37FC382618DBB70041E7CF /* UserSettingsView.swift in Sources */,
+				FF55E11B2659091200124FD3 /* TakeToWorkViewModel.swift in Sources */,
 				FFDF8AF02651498800B146D5 /* AuthorizedRequestFactorys.swift in Sources */,
 				FFDF8AE9265118C600B146D5 /* TakeToWorkItem.swift in Sources */,
+				FF5BEF23265C29EE003D0566 /* ProgressHUD.swift in Sources */,
 				FF37FC2A261887110041E7CF /* RootProtocols.swift in Sources */,
 				FFD8E6D525F25FFA002CFD86 /* Assembly.swift in Sources */,
 				FF09541226217B7C00BF20FE /* URLProvider.swift in Sources */,
@@ -472,12 +506,16 @@
 				FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */,
 				FF1119DC2621666300A785E2 /* DataCoder.swift in Sources */,
 				FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */,
+				FF55E11A2659091200124FD3 /* TakeToWorkBuilder.swift in Sources */,
 				FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */,
+				FF976A57265EC52300493A5A /* ActionButton.swift in Sources */,
 				FF1CF5B7261B85D9001502F2 /* UserDefaultsDataStore.swift in Sources */,
+				FF5BEF212659774B003D0566 /* LoadableState.swift in Sources */,
 				FF1119E0262166C500A785E2 /* PersistentDataStore.swift in Sources */,
 				FF0954152621811000BF20FE /* UserAssembly.swift in Sources */,
 				FF37FC422618E3290041E7CF /* SidebarView.swift in Sources */,
 				FF1119D02620E8FC00A785E2 /* InMemoryValueStore.swift in Sources */,
+				FF55E1192659091200124FD3 /* TakeToWorkView.swift in Sources */,
 				FF86F6B6260E6BE700217F78 /* UserProviderProtocols.swift in Sources */,
 				FFDF8AED2651193B00B146D5 /* TakeToWorkItemsProviderProtocol.swift in Sources */,
 				FFD8E6DD25F260A6002CFD86 /* User.swift in Sources */,
@@ -489,6 +527,7 @@
 				FF1119CD2620E69700A785E2 /* JSONCoder.swift in Sources */,
 				FFDF8AF226515E4C00B146D5 /* AuthorizedRequestFactorysProtocol.swift in Sources */,
 				FF37FC152615084C0041E7CF /* StoredValue.swift in Sources */,
+				FF5BEF1F26596694003D0566 /* RefreshableScrollView.swift in Sources */,
 				FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */,
 				FF09541B26218FD100BF20FE /* URLProviderProtocol.swift in Sources */,
 				FF37FC2D2618D9A00041E7CF /* UserSettingsBuilder.swift in Sources */,
@@ -499,6 +538,7 @@
 				FF37FC352618DB960041E7CF /* UserSettingsViewModel.swift in Sources */,
 				FF37FC452618E3360041E7CF /* SidebarViewModel.swift in Sources */,
 				FFBB06AA25EB9B60005EA5A2 /* MainApp.swift in Sources */,
+				FF55E11C2659091200124FD3 /* TakeToWorkProtocols.swift in Sources */,
 				FFD8E6D825F26035002CFD86 /* UserProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
