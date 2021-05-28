@@ -10,18 +10,20 @@ import SwiftUI
 final class RootRouter: Router<SidebarRoute>, SidebarRouterProtocol {}
 
 final class RootBuilder: ModuleBuilder {
+    private let assembly: Assembly
     private let sidebarBuilder: SidebarBuilder
     private let router: RootRouter
 
     init(_ assembly: Assembly) {
+        self.assembly = assembly
         let router = RootBuilder.createRouter(assembly)
-        self.sidebarBuilder = SidebarBuilder(router: router)
+        self.sidebarBuilder = SidebarBuilder(assembly, router)
         self.router = router
     }
 
-    func build(_ assembly: Assembly) -> some View {
+    func build() -> some View {
         RootView(
-            sidebarView: sidebarBuilder.build(assembly),
+            sidebarView: sidebarBuilder.build(),
             mainView: router.routingView())
     }
 }
@@ -34,7 +36,7 @@ extension RootBuilder {
             case .userSettings:
                 return AnyView(Color.red)
             case .takenToWork:
-                return AnyView(TakeToWorkBuilder().build(assembly))
+                return AnyView(TakeToWorkBuilder(assembly).build())
             case .callOrders:
                 return AnyView(Color.green)
             case .myAlerts:

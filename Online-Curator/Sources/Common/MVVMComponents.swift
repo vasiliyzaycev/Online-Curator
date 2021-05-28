@@ -10,7 +10,7 @@ import SwiftUI
 protocol ModuleBuilder {
     associatedtype V: View
     
-    func build(_ : Assembly) -> V
+    func build() -> V
 }
 
 protocol RouterProtocol {

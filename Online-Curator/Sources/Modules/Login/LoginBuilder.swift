@@ -10,6 +10,7 @@ import SwiftUI
 final class LoginRouter: Router<LoginRoute>, LoginRouterProtocol {}
 
 final class LoginBuilder: ModuleBuilder {
+    private let assembly: Assembly
     private lazy var router: LoginRouter = {
         LoginRouter { route in
             switch route {
@@ -20,8 +21,12 @@ final class LoginBuilder: ModuleBuilder {
             }
         }
     }()
-    
-    func build(_ assembly: Assembly) -> some View {
+
+    init(_ assembly: Assembly) {
+        self.assembly = assembly
+    }
+
+    func build() -> some View {
         router.navigationView {
             LoginView(
                 viewModel: LoginViewModel(

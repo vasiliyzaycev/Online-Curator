@@ -16,7 +16,7 @@ final class UserSettingsBuilder: ModuleBuilder {
 //        }
 //    }
 
-    func build(_ assembly: Assembly) -> some View {
+    func build() -> some View {
 //        Button {
 //            //
 //        } label: {

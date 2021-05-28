@@ -14,6 +14,7 @@ final class TakeToWorkRouter: Router<TakeToWorkRoute>, TakeToWorkRouterProtocol 
 }
 
 final class TakeToWorkBuilder: ModuleBuilder {
+    private let assembly: Assembly
     private lazy var router: TakeToWorkRouter = {
         TakeToWorkRouter { route in
             switch route {
@@ -22,8 +23,12 @@ final class TakeToWorkBuilder: ModuleBuilder {
             }
         }
     }()
+
+    init(_ assembly: Assembly) {
+        self.assembly = assembly
+    }
     
-    func build(_ assembly: Assembly) -> some View {
+    func build() -> some View {
         TakeToWorkView(
             viewModel: TakeToWorkViewModel(
                 itemsProvider: assembly.takeToWorkItemsProvider,

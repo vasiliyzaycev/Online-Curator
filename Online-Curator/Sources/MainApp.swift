@@ -20,9 +20,9 @@ struct OnlineCuratorApp: App {
     var body: some Scene {
         WindowGroup {
             if let _ = userProvider.user {
-                RootBuilder(assembly).build(assembly) //TODO change build(assembly) to build()
+                RootBuilder(assembly).build()
             } else {
-                LoginBuilder().build(assembly)
+                LoginBuilder(assembly).build()
             }
         }
     }

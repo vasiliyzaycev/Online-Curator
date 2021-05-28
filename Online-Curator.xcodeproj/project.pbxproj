@@ -252,6 +252,26 @@
 			path = TakeToWork;
 			sourceTree = "<group>";
 		};
+		FF56A894265EEC9900583445 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF56A89526616B3500583445 /* UIKitProxys */,
+				FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */,
+				FF976A56265EC52300493A5A /* ActionButton.swift */,
+				FF56A892265EE86900583445 /* ErrorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF56A89526616B3500583445 /* UIKitProxys */ = {
+			isa = PBXGroup;
+			children = (
+				FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */,
+				FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */,
+			);
+			path = UIKitProxys;
+			sourceTree = "<group>";
+		};
 		FF66BB23261073510075F4BE /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,13 +345,9 @@
 			isa = PBXGroup;
 			children = (
 				FF37FC1726150A740041E7CF /* StoredValue */,
+				FF56A894265EEC9900583445 /* Views */,
 				FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */,
-				FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */,
-				FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */,
 				FF5BEF202659774B003D0566 /* LoadableState.swift */,
-				FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */,
-				FF976A56265EC52300493A5A /* ActionButton.swift */,
-				FF56A892265EE86900583445 /* ErrorView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
