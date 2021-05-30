@@ -39,7 +39,7 @@
 		FF5BEF212659774B003D0566 /* LoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF202659774B003D0566 /* LoadableState.swift */; };
 		FF5BEF23265C29EE003D0566 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */; };
 		FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB24261073840075F4BE /* RootBuilder.swift */; };
-		FF66BB29261074D80075F4BE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB28261074D80075F4BE /* RootView.swift */; };
+		FF66BB29261074D80075F4BE /* SidebarSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB28261074D80075F4BE /* SidebarSkeletonView.swift */; };
 		FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */; };
 		FF86F6A22609254B00217F78 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6A12609254B00217F78 /* Host.swift */; };
 		FF86F6AB260928B800217F78 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86F6AA260928B800217F78 /* NetworkProtocols.swift */; };
@@ -97,7 +97,7 @@
 		FF5BEF202659774B003D0566 /* LoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableState.swift; sourceTree = "<group>"; };
 		FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		FF66BB24261073840075F4BE /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
-		FF66BB28261074D80075F4BE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FF66BB28261074D80075F4BE /* SidebarSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarSkeletonView.swift; sourceTree = "<group>"; };
 		FF66BB2B2610B50B0075F4BE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		FF86F6A12609254B00217F78 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
 		FF86F6AA260928B800217F78 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
@@ -233,10 +233,10 @@
 		FF37FC3B2618E2440041E7CF /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
-				FF37FC3D2618E2F30041E7CF /* SidebarBuilder.swift */,
 				FF37FC472618E3550041E7CF /* SidebarProtocols.swift */,
-				FF37FC412618E3290041E7CF /* SidebarView.swift */,
+				FF37FC3D2618E2F30041E7CF /* SidebarBuilder.swift */,
 				FF37FC442618E3360041E7CF /* SidebarViewModel.swift */,
+				FF37FC412618E3290041E7CF /* SidebarView.swift */,
 			);
 			path = Sidebar;
 			sourceTree = "<group>";
@@ -256,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				FF56A89526616B3500583445 /* UIKitProxys */,
+				FF66BB28261074D80075F4BE /* SidebarSkeletonView.swift */,
 				FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */,
 				FF976A56265EC52300493A5A /* ActionButton.swift */,
 				FF56A892265EE86900583445 /* ErrorView.swift */,
@@ -276,9 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				FF37FC3B2618E2440041E7CF /* Sidebar */,
-				FF66BB24261073840075F4BE /* RootBuilder.swift */,
 				FF37FC29261887110041E7CF /* RootProtocols.swift */,
-				FF66BB28261074D80075F4BE /* RootView.swift */,
+				FF66BB24261073840075F4BE /* RootBuilder.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -522,7 +522,7 @@
 				FF56A893265EE86900583445 /* ErrorView.swift in Sources */,
 				FF09541226217B7C00BF20FE /* URLProvider.swift in Sources */,
 				FF37FC482618E3550041E7CF /* SidebarProtocols.swift in Sources */,
-				FF66BB29261074D80075F4BE /* RootView.swift in Sources */,
+				FF66BB29261074D80075F4BE /* SidebarSkeletonView.swift in Sources */,
 				FF37FC2126187DFE0041E7CF /* LoginProtocols.swift in Sources */,
 				FF1119DC2621666300A785E2 /* DataCoder.swift in Sources */,
 				FF66BB2C2610B50B0075F4BE /* NavigationBarModifier.swift in Sources */,

@@ -49,8 +49,8 @@ final class LoginViewModel: LoginViewModelProtocol {
         updateState(.hideError)
     }
     
-    func open(_ route: LoginRoute) {
-        router.open(route)
+    func makeTransition(to route: LoginRoute) {
+        router.makeTransition(to: route)
     }
 }
 

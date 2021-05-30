@@ -9,9 +9,9 @@ import SwiftUI
 
 final class SidebarBuilder: ModuleBuilder {
     private let assembly: Assembly
-    private let router: SidebarRouterProtocol
+    private let router: RootRouterProtocol
 
-    init(_ assembly: Assembly, _ router: SidebarRouterProtocol) {
+    init(_ assembly: Assembly, _ router: RootRouterProtocol) {
         self.assembly = assembly
         self.router = router
     }

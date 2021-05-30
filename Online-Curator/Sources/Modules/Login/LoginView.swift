@@ -96,11 +96,11 @@ extension LoginView {
     private func bottomButtons() -> some View {
         HStack {
             bottomButton(label: "Регистрация") {
-                viewModel.open(.registration)
+                viewModel.makeTransition(to: .registration)
             }
             Spacer()
             bottomButton(label: "Забыли пароль?") {
-                viewModel.open(.forgotPassword)
+                viewModel.makeTransition(to: .forgotPassword)
             }
         }
         .padding(.bottom, Constants.padding)
@@ -131,7 +131,7 @@ struct LoginView_Previews: PreviewProvider {
 
         func startLogin() {}
         func hideAlert() {}
-        func open(_ route: LoginRoute) {}
+        func makeTransition(to route: LoginRoute) {}
         func close() {}
     }
 

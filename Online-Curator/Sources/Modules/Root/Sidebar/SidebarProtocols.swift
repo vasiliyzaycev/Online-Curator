@@ -7,21 +7,6 @@
 
 import Foundation
 
-enum SidebarRoute: Hashable, CaseIterable {
-    case userSettings
-    case takenToWork
-    case callOrders
-    case myAlerts
-    case dataOnGraduates
-    case agreements
-    case technicalSupport
-}
-
-protocol SidebarRouterProtocol {
-    func open(_ route: SidebarRoute)
-    func close()
-}
-
-protocol SidebarViewModelProtocol: SidebarRouterProtocol, ObservableObject {
+protocol SidebarViewModelProtocol: RootRouterProtocol, ObservableObject {
     var canAcceptRequests: Bool { get set }
 }

@@ -7,9 +7,17 @@
 
 import Foundation
 
-protocol RootRouterProtocol {
-    func close()
+enum RootRoute: Hashable, CaseIterable {
+    case userSettings
+    case takenToWork
+    case callOrders
+    case myAlerts
+    case dataOnGraduates
+    case agreements
+    case technicalSupport
 }
 
-protocol RootViewModelProtocol: RootRouterProtocol {
+protocol RootRouterProtocol {
+    func makeTransition(to route: RootRoute)
+    func close()
 }

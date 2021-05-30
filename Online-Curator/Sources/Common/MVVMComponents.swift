@@ -16,12 +16,12 @@ protocol ModuleBuilder {
 protocol RouterProtocol {
     associatedtype R
 
-    func open(_ route: R)
+    func makeTransition(to route: R)
     func close()
 }
 
 class Router<R: Hashable & CaseIterable>: ObservableObject {
-    @Published private var currentState: R? = nil
+    @Published private var currentRoute: R? = nil
     private let destinationForRoute: (R) -> AnyView
     private let completion: (() -> Void)?
     
@@ -35,12 +35,12 @@ class Router<R: Hashable & CaseIterable>: ObservableObject {
 }
 
 extension Router: RouterProtocol {
-    func open(_ route: R) {
-        currentState = route
+    func makeTransition(to route: R) {
+        currentRoute = route
     }
 
     func close() {
-        currentState = nil //TODO this should be executed in child completion
+        currentRoute = nil //TODO this should be executed in child completion
         completion?()
     }
 }
@@ -52,10 +52,6 @@ extension Router {
         NavigationView {
             content().background(navigationLinks())
         }
-    }
-
-    func routingView() -> some View {
-        RoutingView(router: self)
     }
 }
 
@@ -77,29 +73,33 @@ extension Router {
                     NavigationLink(
                         destination: router.destinationForRoute(route),
                         tag: route,
-                        selection: $router.currentState,
+                        selection: $router.currentRoute,
                         label: {})
                 }
             }
         }
     }
+}
 
-    private struct RoutingView: View {
-        @ObservedObject private var router: Router<R>
+class SwitcherRouter<R: Hashable & CaseIterable>: ObservableObject {
+    @Published private(set) var currentRoute: R
+    private let completion: (() -> Void)?
 
-        init(router: Router<R>) {
-            self.router = router
-        }
-
-        var body: some View {
-            router.currentDestination()
-        }
+    init(
+        route: R,
+        completion: (() -> Void)? = nil
+    ) {
+        self.currentRoute = route
+        self.completion = completion
     }
 }
 
-private extension Router {
-    func currentDestination() -> AnyView {
-        guard let state = currentState else { return AnyView(EmptyView()) }
-        return destinationForRoute(state)
+extension SwitcherRouter: RouterProtocol {
+    func makeTransition(to route: R) {
+        currentRoute = route
+    }
+
+    func close() {
+        completion?()
     }
 }

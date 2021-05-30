@@ -11,18 +11,18 @@ final class SidebarViewModel: SidebarViewModelProtocol {
     var canAcceptRequests: Bool = false
 
     private let userProvider: UserProviderProtocol
-    private let router: SidebarRouterProtocol
+    private let router: RootRouterProtocol
 
     init(
         userProvider: UserProviderProtocol,
-        router: SidebarRouterProtocol
+        router: RootRouterProtocol
     ) {
         self.userProvider = userProvider
         self.router = router
     }
 
-    func open(_ route: SidebarRoute) {
-        router.open(route)
+    func makeTransition(to route: RootRoute) {
+        router.makeTransition(to: route)
     }
 
     func close() {

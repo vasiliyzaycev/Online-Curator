@@ -16,9 +16,9 @@ struct SidebarView<ViewModel: SidebarViewModelProtocol>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.padding) {
-            ForEach(SidebarRoute.allCases.map { $0 }, id: \.self) { route in
+            ForEach(RootRoute.allCases.map { $0 }, id: \.self) { route in
                 row(iconName: route.iconName(), title: route.label()) {
-                    viewModel.open(route)
+                    viewModel.makeTransition(to: route)
                 }
             }
             row(iconName: "arrow.right.square.fill", title: "Выход") {
@@ -51,7 +51,7 @@ extension SidebarView {
     }
 }
 
-extension SidebarRoute {
+extension RootRoute {
     func label() -> String {
         switch self {
         case .userSettings:     return "Настойки пользователя"
@@ -87,7 +87,7 @@ struct SidebarView_Previews: PreviewProvider {
     class ViewModelStub: SidebarViewModelProtocol {
         var canAcceptRequests: Bool = false
 
-        func open(_ route: SidebarRoute) {}
+        func makeTransition(to route: RootRoute) {}
         func close() {}
     }
 
