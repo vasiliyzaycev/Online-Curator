@@ -13,7 +13,7 @@ final class TakeToWorkViewModel: TakeToWorkViewModelProtocol {
 
     private let itemsProvider: TakeToWorkItemsProviderProtocol
     private let router: TakeToWorkRouterProtocol
-    private var bag = Set<AnyCancellable>()
+    private var bag: AnyCancellable?
     
     init(
         itemsProvider: TakeToWorkItemsProviderProtocol,
@@ -23,11 +23,13 @@ final class TakeToWorkViewModel: TakeToWorkViewModelProtocol {
         self.router = router
     }
 
-    func update(complition: (() -> Void)?) {
-        if case .none = complition {
-            updateState(.startFetch)
-        }
-        itemsProvider
+    func start() {
+        updateState(.startFetch)
+        update {}
+    }
+
+    func update(complition: @escaping () -> Void) {
+        bag = itemsProvider
             .fetchTakeToWorkList()
             .mapError { error -> FetchError in
                 switch error {
@@ -41,17 +43,12 @@ final class TakeToWorkViewModel: TakeToWorkViewModelProtocol {
                 }
             } receiveValue: { [weak self] items in
                 self?.updateState(.result(.success(items)))
-                complition?()
+                complition()
             }
-            .store(in: &bag)
-    }
-
-    func update() {
-        update(complition: nil)
     }
 
     func openDetail(_ item: TakeToWorkItem) {
-        router.openDetail(item)
+        router.makeTransition(to: .detail(item))
     }
 }
 

@@ -7,19 +7,20 @@
 
 import Foundation
 
-enum TakeToWorkRoute: Hashable, CaseIterable {
-    case detail
+enum TakeToWorkRoute {
+    case detail(TakeToWorkItem)
 }
 
 protocol TakeToWorkRouterProtocol {
-    func openDetail(_ item: TakeToWorkItem)
+    func makeTransition(to route: TakeToWorkRoute)
 }
 
-protocol TakeToWorkViewModelProtocol: TakeToWorkRouterProtocol, ObservableObject {
+protocol TakeToWorkViewModelProtocol: ObservableObject {
     var state: TakeToWorState { get }
 
-    func update(complition: (() -> Void)?)
-    func update()
+    func start()
+    func update(complition: @escaping () -> Void)
+    func openDetail(_ item: TakeToWorkItem)
 }
 
 typealias TakeToWorState = Reloadable<[TakeToWorkItem], FetchError>

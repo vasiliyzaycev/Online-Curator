@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LoginRoute: Hashable, CaseIterable {
+enum LoginRoute {
     case registration
     case forgotPassword
 }

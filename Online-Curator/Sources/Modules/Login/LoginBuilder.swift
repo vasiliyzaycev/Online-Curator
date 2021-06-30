@@ -7,19 +7,12 @@
 
 import SwiftUI
 
-final class LoginRouter: Router<LoginRoute>, LoginRouterProtocol {}
+final class LoginRouter<V: View>: Router<LoginRoute, V>, LoginRouterProtocol {}
 
 final class LoginBuilder: ModuleBuilder {
     private let assembly: Assembly
-    private lazy var router: LoginRouter = {
-        LoginRouter { route in
-            switch route {
-            case .registration:
-                return AnyView(Text("Экран регистрации"))
-            case .forgotPassword:
-                return AnyView(Text("Экран восстановления пароля"))
-            }
-        }
+    private lazy var router: LoginRouter<LoginRouterView> = {
+        LoginRouter { route in LoginRouterView(route) }
     }()
 
     init(_ assembly: Assembly) {
@@ -32,6 +25,23 @@ final class LoginBuilder: ModuleBuilder {
                 viewModel: LoginViewModel(
                     userProvider: assembly.userProvider,
                     router: router))
+        }
+    }
+}
+
+extension LoginBuilder {
+    private struct LoginRouterView: View {
+        private let route: LoginRoute
+
+        init(_ route: LoginRoute) {
+            self.route = route
+        }
+
+        var body: some View {
+            switch route {
+            case .registration:     Text("Экран регистрации")
+            case .forgotPassword:   Text("Экран восстановления пароля")
+            }
         }
     }
 }

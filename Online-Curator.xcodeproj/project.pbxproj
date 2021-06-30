@@ -35,6 +35,8 @@
 		FF55E11B2659091200124FD3 /* TakeToWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1172659091200124FD3 /* TakeToWorkViewModel.swift */; };
 		FF55E11C2659091200124FD3 /* TakeToWorkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55E1182659091200124FD3 /* TakeToWorkProtocols.swift */; };
 		FF56A893265EE86900583445 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56A892265EE86900583445 /* ErrorView.swift */; };
+		FF56A89A2666B7DE00583445 /* MVVMProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56A8992666B7DE00583445 /* MVVMProtocols.swift */; };
+		FF56A89C2666B83700583445 /* SwitcherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56A89B2666B83700583445 /* SwitcherRouter.swift */; };
 		FF5BEF1F26596694003D0566 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */; };
 		FF5BEF212659774B003D0566 /* LoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF202659774B003D0566 /* LoadableState.swift */; };
 		FF5BEF23265C29EE003D0566 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */; };
@@ -49,7 +51,7 @@
 		FF976A57265EC52300493A5A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF976A56265EC52300493A5A /* ActionButton.swift */; };
 		FF9E2C5325F3A12C000C1846 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */; };
 		FF9E2C5725F561B9000C1846 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */; };
-		FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */; };
+		FFACD5B625F2517B005D5BA1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFACD5B525F2517B005D5BA1 /* Router.swift */; };
 		FFBB06AA25EB9B60005EA5A2 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06A925EB9B60005EA5A2 /* MainApp.swift */; };
 		FFBB06AC25EB9B60005EA5A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */; };
 		FFBB06AE25EB9B61005EA5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB06AD25EB9B61005EA5A2 /* Assets.xcassets */; };
@@ -93,6 +95,8 @@
 		FF55E1172659091200124FD3 /* TakeToWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkViewModel.swift; sourceTree = "<group>"; };
 		FF55E1182659091200124FD3 /* TakeToWorkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeToWorkProtocols.swift; sourceTree = "<group>"; };
 		FF56A892265EE86900583445 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FF56A8992666B7DE00583445 /* MVVMProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMProtocols.swift; sourceTree = "<group>"; };
+		FF56A89B2666B83700583445 /* SwitcherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherRouter.swift; sourceTree = "<group>"; };
 		FF5BEF1E26596694003D0566 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		FF5BEF202659774B003D0566 /* LoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableState.swift; sourceTree = "<group>"; };
 		FF5BEF22265C29EE003D0566 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
@@ -107,7 +111,7 @@
 		FF976A56265EC52300493A5A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FF9E2C5225F3A12C000C1846 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		FF9E2C5625F561B9000C1846 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMComponents.swift; sourceTree = "<group>"; };
+		FFACD5B525F2517B005D5BA1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FFBB06A625EB9B60005EA5A2 /* Online-Curator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online-Curator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBB06A925EB9B60005EA5A2 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		FFBB06AB25EB9B60005EA5A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -273,6 +277,16 @@
 			path = UIKitProxys;
 			sourceTree = "<group>";
 		};
+		FF56A8982666B7A300583445 /* MVVMComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FF56A8992666B7DE00583445 /* MVVMProtocols.swift */,
+				FFACD5B525F2517B005D5BA1 /* Router.swift */,
+				FF56A89B2666B83700583445 /* SwitcherRouter.swift */,
+			);
+			path = MVVMComponents;
+			sourceTree = "<group>";
+		};
 		FF66BB23261073510075F4BE /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,9 +358,9 @@
 		FFACD5B825F25186005D5BA1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FF56A8982666B7A300583445 /* MVVMComponents */,
 				FF37FC1726150A740041E7CF /* StoredValue */,
 				FF56A894265EEC9900583445 /* Views */,
-				FFACD5B525F2517B005D5BA1 /* MVVMComponents.swift */,
 				FF5BEF202659774B003D0566 /* LoadableState.swift */,
 			);
 			path = Common;
@@ -512,6 +526,7 @@
 				FF86F6A22609254B00217F78 /* Host.swift in Sources */,
 				FF86F6AB260928B800217F78 /* NetworkProtocols.swift in Sources */,
 				FF37FC302618DB100041E7CF /* UserSettingsProtocols.swift in Sources */,
+				FF56A89A2666B7DE00583445 /* MVVMProtocols.swift in Sources */,
 				FF37FC382618DBB70041E7CF /* UserSettingsView.swift in Sources */,
 				FF55E11B2659091200124FD3 /* TakeToWorkViewModel.swift in Sources */,
 				FFDF8AF02651498800B146D5 /* AuthorizedRequestFactorys.swift in Sources */,
@@ -553,7 +568,8 @@
 				FF37FC2D2618D9A00041E7CF /* UserSettingsBuilder.swift in Sources */,
 				FF37FC3E2618E2F30041E7CF /* SidebarBuilder.swift in Sources */,
 				FF66BB25261073840075F4BE /* RootBuilder.swift in Sources */,
-				FFACD5B625F2517B005D5BA1 /* MVVMComponents.swift in Sources */,
+				FFACD5B625F2517B005D5BA1 /* Router.swift in Sources */,
+				FF56A89C2666B83700583445 /* SwitcherRouter.swift in Sources */,
 				FF37FC1926150AC80041E7CF /* ValueStore.swift in Sources */,
 				FF37FC352618DB960041E7CF /* UserSettingsViewModel.swift in Sources */,
 				FF37FC452618E3360041E7CF /* SidebarViewModel.swift in Sources */,

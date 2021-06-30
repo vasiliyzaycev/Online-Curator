@@ -38,19 +38,19 @@ extension RootBuilder {
         var body: some View {
             switch router.currentRoute {
             case .userSettings:
-                return AnyView(Color.red)
+                Color.red
             case .takenToWork:
-                return AnyView(TakeToWorkBuilder(assembly).build())
+                TakeToWorkBuilder(assembly).build()
             case .callOrders:
-                return AnyView(Color.green)
+                Color.green
             case .myAlerts:
-                return AnyView(Color.orange)
+                Color.orange
             case .dataOnGraduates:
-                return AnyView(Color.pink)
+                Color.pink
             case .agreements:
-                return AnyView(Color.purple)
+                Color.purple
             case .technicalSupport:
-                return AnyView(Color.black)
+                Color.black
             }
         }
     }

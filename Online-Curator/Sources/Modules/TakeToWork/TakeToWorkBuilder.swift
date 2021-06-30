@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-final class TakeToWorkRouter: Router<TakeToWorkRoute>, TakeToWorkRouterProtocol {
-    func openDetail(_ item: TakeToWorkItem) {
-        //TODO
-    }
-}
+final class TakeToWorkRouter:
+    Router<TakeToWorkRoute, AnyView>,
+    TakeToWorkRouterProtocol {}
 
 final class TakeToWorkBuilder: ModuleBuilder {
     private let assembly: Assembly
     private lazy var router: TakeToWorkRouter = {
         TakeToWorkRouter { route in
             switch route {
-            case .detail:
-                return AnyView(Color.yellow)
+            case .detail(let item):
+                return AnyView(Color.yellow
+                    .navigationBarTitle("Мои оповещения", displayMode: .inline))
             }
         }
     }()
@@ -33,5 +32,6 @@ final class TakeToWorkBuilder: ModuleBuilder {
             viewModel: TakeToWorkViewModel(
                 itemsProvider: assembly.takeToWorkItemsProvider,
                 router: router))
+            .background(router.navigationLinksView())
     }
 }

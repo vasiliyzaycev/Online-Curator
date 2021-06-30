@@ -27,9 +27,9 @@ struct SidebarSkeletonView<Left: View, Right: View>: View {
                 sidebar()
             }
             .edgesIgnoringSafeArea(.bottom)
-            .navigationBarTitle("Онлайн-куратор", displayMode: .inline)
-            .navigationBarItems(leading: barButton())
             .navigationBarColor(UIColor(named: "NavBarBackgroundColor"))
+            .navigationBarItems(leading: barButton())
+            .navigationBarTitle("Онлайн-куратор", displayMode: .inline)
             .gesture(dragGesture())
         }
     }

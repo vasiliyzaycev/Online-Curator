@@ -12,7 +12,7 @@ struct TakeToWorkView<ViewModel: TakeToWorkViewModelProtocol>: View {
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
-        viewModel.update()
+        viewModel.start()
     }
 
     var body: some View {
@@ -28,7 +28,7 @@ struct TakeToWorkView<ViewModel: TakeToWorkViewModelProtocol>: View {
 extension TakeToWorkView {
     private func errorView(_ error: FetchError) -> some View {
         ErrorView(message: error.description) {
-            viewModel.update()
+            viewModel.start()
         }
     }
 
@@ -49,7 +49,11 @@ extension TakeToWorkView {
             } else {
                 List {
                     ForEach(items, id: \.self) { item in
-                        ItemView(item: item)
+                        Button {
+                            self.viewModel.openDetail(item)
+                        } label: {
+                            ItemView(item: item)
+                        }
                     }
                 }
             }
@@ -84,16 +88,15 @@ struct TakeToWorkView_Previews: PreviewProvider {
         @Published var state: TakeToWorState = .init(
             value: [mockItem()],
             state: .idle)
-        func update() {
-            update(complition: nil)
+        func start() {
         }
 
-        func update(complition: (() -> Void)?) {
+        func update(complition: @escaping () -> Void) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.state = TakeToWorState(
                     value: (self.state.value ?? []) + [Self.mockItem()],
                     state: .idle)
-                complition?()
+                complition()
             }
         }
 
