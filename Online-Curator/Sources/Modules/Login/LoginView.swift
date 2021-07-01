@@ -136,11 +136,9 @@ struct LoginView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        Group {
-            LoginView(viewModel: ViewModelStub())
-                .previewDevice("iPhone SE (1st generation)")
-            LoginView(viewModel: ViewModelStub())
-                .previewDevice("iPhone 12 mini")
-        }
+        LoginView(viewModel: ViewModelStub())
+            .previewDevice("iPhone SE (1st generation)")
+        LoginView(viewModel: ViewModelStub())
+            .previewDevice("iPhone 12 mini")
     }
 }

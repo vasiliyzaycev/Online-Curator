@@ -34,3 +34,7 @@ extension TakeToWorkItem: Codable {
         case sendingDate = "date_sent_user"
     }
 }
+
+extension TakeToWorkItem: Identifiable {
+    var id: Self { self }
+}

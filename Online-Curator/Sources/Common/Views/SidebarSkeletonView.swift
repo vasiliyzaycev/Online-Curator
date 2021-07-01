@@ -64,15 +64,13 @@ extension SidebarSkeletonView {
 
 struct SidebarSkeletonView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            SidebarSkeletonView(
-                sidebarView: Color.yellow,
-                contentView: Color.gray)
-                    .previewDevice("iPhone SE (1st generation)")
-            SidebarSkeletonView(
-                sidebarView: Color.yellow,
-                contentView: Color.gray)
-                    .previewDevice("iPhone 12 mini")
-        }
+        SidebarSkeletonView(
+            sidebarView: Color.yellow,
+            contentView: Color.gray)
+                .previewDevice("iPhone SE (1st generation)")
+        SidebarSkeletonView(
+            sidebarView: Color.yellow,
+            contentView: Color.gray)
+                .previewDevice("iPhone 12 mini")
     }
 }

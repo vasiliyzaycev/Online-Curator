@@ -92,11 +92,9 @@ struct SidebarView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        Group {
-            SidebarView(viewModel:  ViewModelStub())
-                .previewDevice("iPhone SE (1st generation)")
-            SidebarView(viewModel:  ViewModelStub())
-                .previewDevice("iPhone 12 mini")
-        }
+        SidebarView(viewModel:  ViewModelStub())
+            .previewDevice("iPhone SE (1st generation)")
+        SidebarView(viewModel:  ViewModelStub())
+            .previewDevice("iPhone 12 mini")
     }
 }

@@ -42,18 +42,17 @@ extension TakeToWorkView {
         }
     }
 
+    @ViewBuilder
     private func contentView(_ items: [TakeToWorkItem]) -> some View {
-        Group {
-            if items.isEmpty {
-                Text("Список пуст").bold()
-            } else {
-                List {
-                    ForEach(items, id: \.self) { item in
-                        Button {
-                            self.viewModel.openDetail(item)
-                        } label: {
-                            ItemView(item: item)
-                        }
+        if items.isEmpty {
+            Text("Список пуст").bold()
+        } else {
+            List {
+                ForEach(items) { item in
+                    Button {
+                        self.viewModel.openDetail(item)
+                    } label: {
+                        ItemView(item: item)
                     }
                 }
             }
@@ -118,11 +117,9 @@ struct TakeToWorkView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        Group {
-            TakeToWorkView(viewModel: ViewModelStub())
-                .previewDevice("iPhone SE (1st generation)")
-            TakeToWorkView(viewModel: ViewModelStub())
-                .previewDevice("iPhone 12 mini")
-        }
+        TakeToWorkView(viewModel: ViewModelStub())
+            .previewDevice("iPhone SE (1st generation)")
+        TakeToWorkView(viewModel: ViewModelStub())
+            .previewDevice("iPhone 12 mini")
     }
 }
